@@ -12,11 +12,12 @@ body {
   line-height: 1.5rem;
   font-weight: 400;
 
-  color: $primary-color;
-  background-color: $secondary-color;
+  color: $secondary-color;
+  background-color: $primary-color;
 }
 
 a {
+  color: $secondary-color;
   text-decoration: inherit;
 }
 
