@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+@font-face {
+  font-family: 'Futura';
+  src: url('../assets/fonts/futura-light.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('../assets/fonts/futura.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('../assets/fonts/futura-bold.ttf')
+    format('truetype');
+}
+
+// fonts
+$primary-font-family: 'Futura';
+$secondary-font-family: 'Poppins';
+
+// colors
+$primary-color: #121216;
+$secondary-color: #ffffff;

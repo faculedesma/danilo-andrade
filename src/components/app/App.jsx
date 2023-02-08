@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from '@/components/home/Home';
-import reactLogo from '@assets/react.svg';
+import reactLogo from '@/assets/svgs/react.svg';
 import './app.scss';
 
 const App = () => {
