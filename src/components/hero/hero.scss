@@ -71,6 +71,15 @@
         transform: translateX(150%);
         animation: show-image 0.6s ease-in-out forwards;
       }
+
+      .overlay {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        clip-path: circle(100px at var(--x, 0) var(--y, 0));
+        transition: clip-path 300ms linear;
+      }
     }
 
     &--box {

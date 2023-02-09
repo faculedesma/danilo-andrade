@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Rectangle } from '@/assets/svgs/Rectangle';
 import { Circle } from '@/assets/svgs/Circle';
 import { Arrow } from '@/assets/svgs/Arrow';
 import { PrimaryCTAButton } from '@/components/buttons/PrimaryCTAButton';
 import CoverPhoto from '@/assets/images/cover-photo.png';
+import CoverPhotoDarken from '@/assets/images/cover-photo-darken.png';
+import CoverPhotoPsych from '@/assets/images/cover-photo-psych.png';
+import gsap from 'gsap';
 import './hero.scss';
 
 export const Hero = () => {
+  useEffect(() => {
+    const overlay = document.querySelector('.overlay');
+
+    window.addEventListener('mousemove', (e) => {
+      const { clientX, clientY } = e;
+      const x = Math.round(
+        (clientX / window.innerWidth) * 100
+      );
+      const y = Math.round(
+        (clientY / window.innerHeight) * 100
+      );
+
+      gsap.to(overlay, {
+        '--x': `${x}%`,
+        '--y': `${y}%`,
+        duration: 0.3
+      });
+    });
+  }, []);
+
   return (
     <div className="container">
       <div className="hero">
@@ -31,6 +54,11 @@ export const Hero = () => {
         <div className="hero-right">
           <div className="hero-right--image">
             <img src={CoverPhoto} alt="cover" />
+            <img
+              src={CoverPhotoPsych}
+              alt="cover"
+              className="overlay"
+            />
           </div>
           <div className="hero-right--box">
             <Rectangle />
