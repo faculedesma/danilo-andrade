@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from '@/components/header/Header';
+import { Hero } from '@/components/hero/Hero';
 import './home.scss';
 
 const Home = () => {
   return (
-    <div className="home">
+    <div id="home" className="home">
       <Header />
-      {/* <h1>Danilo Andrade</h1>
-      <p>Subtitle</p> */}
+      <Hero />
     </div>
   );
 };

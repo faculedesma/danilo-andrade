@@ -1,5 +1,5 @@
 import React from 'react';
-import { Circle } from '@/assets/svgs/Circle';
+import { CircleCut } from '@/assets/svgs/CircleCut';
 import './header.scss';
 
 const links = [
@@ -49,7 +49,7 @@ export const Menu = ({ isOpen }) => {
           })}
         </ul>
         <div className="header-menu--separator"></div>
-        <Circle />
+        <CircleCut />
       </div>
     </div>
   );

@@ -1,20 +1,32 @@
 import React, { useRef, useState } from 'react';
 import { Logo } from '@/assets/svgs/Logo';
-import {
-  Twitter,
-  Instagram,
-  Mail
-} from '@/assets/svgs/Social';
+import { Links } from '@/components/social/Social';
 import { SecondaryCTAButton } from '@/components/buttons/SecondaryCTAButton';
 import { Menu } from './Menu';
 import './header.scss';
+
+const preventScroll = (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  return false;
+};
 
 const Header = () => {
   const buttonRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
-    buttonRef.current.className = isOpen ? '' : 'clicked';
+    const homeEl = document.querySelector('#home');
+    if (!isOpen) {
+      buttonRef.current.className = 'clicked';
+
+      homeEl.addEventListener('wheel', preventScroll, {
+        passive: false
+      });
+    } else {
+      buttonRef.current.className = '';
+      homeEl.removeEventListener('wheel', preventScroll);
+    }
     setIsOpen(buttonRef.current.className);
   };
 
@@ -25,9 +37,7 @@ const Header = () => {
       </div>
       <div className="header-right">
         <div className="header-right--links">
-          <Twitter />
-          <Instagram />
-          <Mail />
+          <Links />
         </div>
         <div className="header-right--cta">
           <SecondaryCTAButton label="call me" />

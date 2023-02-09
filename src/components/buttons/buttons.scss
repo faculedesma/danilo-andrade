@@ -10,6 +10,71 @@
 
   &-cta {
     &--primary {
+      position: relative;
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      border: 1px solid $shades-gray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      z-index: 2;
+      transform: scale(1);
+      transition: all 0.2s ease-in-out;
+
+      .round-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 110px;
+        width: 110px;
+        border-radius: 50%;
+        border: 1px solid $secondary-color;
+        transform: translate(3%, 2%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: transparent;
+        transition: all ease-in-out 0.4s;
+        z-index: 1;
+
+        label {
+          cursor: inherit;
+          font-weight: bold;
+          letter-spacing: 2px;
+          transition: all 0.4s ease-in-out;
+        }
+
+        > svg {
+          margin-top: 15px;
+          width: 16px;
+          fill: $highlight-color;
+          transform: rotate(90deg) translateX(0);
+          transition: all ease-in-out 0.4s;
+        }
+      }
+
+      &:hover {
+        transform: scale(1.2);
+        transition: all ease-in-out 0.4s;
+
+        .round-container {
+          background-color: $secondary-color;
+          transition: all 0.4s ease-in-out;
+
+          label {
+            letter-spacing: 3px;
+            color: $primary-color;
+            transition: all 0.4s ease-in-out;
+          }
+
+          > svg {
+            transform: rotate(90deg) translateX(10px);
+          }
+        }
+      }
     }
 
     &--secondary {
