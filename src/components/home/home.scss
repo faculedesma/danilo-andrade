@@ -1,6 +1,10 @@
 .home {
   width: 100%;
+  display: none;
 
+  &-loaded {
+    display: inherit;
+  }
   h1 {
     text-transform: uppercase;
   }
