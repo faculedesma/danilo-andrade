@@ -110,19 +110,20 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    transform: translate(100px, -20px);
+    transform: translate(120px, -20px);
     opacity: 0.5;
 
     &--line {
       svg {
-        transform: rotate(90deg);
+        transform: translateY(75px) scale(0.5);
+        animation: loop-mouse 2s ease-in-out infinite;
         height: 250px;
       }
     }
 
     &--text {
       width: auto;
-      transform: rotate(90deg) translate(-30px, -30px);
+      transform: rotate(90deg) translate(-45px, -15px);
 
       p {
         margin: 0;
@@ -197,5 +198,19 @@
 
   100% {
     transform: scale(1) translateX(0);
+  }
+}
+
+@keyframes loop-mouse {
+  0% {
+    transform: translateY(75px) scale(0.5);
+  }
+
+  50% {
+    transform: translateY(75px) scale(0.6);
+  }
+
+  100% {
+    transform: translateY(75px) scale(0.5);
   }
 }

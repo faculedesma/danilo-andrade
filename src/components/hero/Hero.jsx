@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { Rectangle } from '@/assets/svgs/Rectangle';
 import { Circle } from '@/assets/svgs/Circle';
-import { Arrow } from '@/assets/svgs/Arrow';
+import { Mouse } from '@/assets/svgs/Mouse';
 import { PrimaryCTAButton } from '@/components/buttons/PrimaryCTAButton';
 import CoverPhoto from '@/assets/images/cover-photo.png';
-import CoverPhotoDarken from '@/assets/images/cover-photo-darken.png';
 import CoverPhotoPsych from '@/assets/images/cover-photo-psych.png';
 import gsap from 'gsap';
 import './hero.scss';
@@ -70,7 +69,7 @@ export const Hero = () => {
             <p>scroll down</p>
           </div>
           <div className="hero-scroll--line">
-            <Arrow />
+            <Mouse />
           </div>
         </div>
         <div className="hero-circles">
