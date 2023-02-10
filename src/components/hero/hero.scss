@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 170px;
+  margin: 170px 0;
 
   &-left {
     height: auto;
@@ -24,6 +24,7 @@
 
         h1 {
           letter-spacing: 2px;
+          text-transform: uppercase;
         }
 
         h1:first-child {
@@ -34,12 +35,13 @@
       }
 
       &-sub {
-        width: 55%;
+        width: 60%;
         line-height: 30px;
         transform: translateX(-50%);
         animation: show-left 0.7s ease-in-out forwards;
 
         p {
+          font-weight: lighter;
           b {
             color: $highlight-color;
           }
@@ -66,19 +68,19 @@
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 
-      img {
-        width: 100%;
-        transform: translateX(150%);
-        animation: show-image 0.6s ease-in-out forwards;
-      }
-
-      .overlay {
+      &-overlay {
         width: 100%;
         position: absolute;
         top: 0;
         left: 0;
-        clip-path: circle(100px at var(--x, 0) var(--y, 0));
+        clip-path: circle(80px at var(--x, 0) var(--y, 0));
         transition: clip-path 300ms linear;
+      }
+
+      img {
+        width: 100%;
+        transform: translateX(150%);
+        animation: show-image 0.6s ease-in-out forwards;
       }
     }
 

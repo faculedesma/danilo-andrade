@@ -8,9 +8,11 @@ import CoverPhotoPsych from '@/assets/images/cover-photo-psych.png';
 import gsap from 'gsap';
 import './hero.scss';
 
-export const Hero = () => {
+const Hero = () => {
   useEffect(() => {
-    const overlay = document.querySelector('.overlay');
+    const overlay = document.querySelector(
+      '.hero-right--image-overlay'
+    );
 
     window.addEventListener('mousemove', (e) => {
       const { clientX, clientY } = e;
@@ -52,11 +54,11 @@ export const Hero = () => {
         </div>
         <div className="hero-right">
           <div className="hero-right--image">
-            <img src={CoverPhoto} alt="cover" />
+            <img src={CoverPhoto} alt="cover-bw" />
             <img
               src={CoverPhotoPsych}
-              alt="cover"
-              className="overlay"
+              alt="cover-psych"
+              className="hero-right--image-overlay"
             />
           </div>
           <div className="hero-right--box">
@@ -80,3 +82,5 @@ export const Hero = () => {
     </div>
   );
 };
+
+export default Hero;

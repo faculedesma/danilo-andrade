@@ -1,0 +1,145 @@
+@import '../../utils/variables';
+
+.work {
+  min-height: 600px;
+
+  &-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    h1 {
+      font-weight: bold;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    &--underline {
+      width: 55px;
+      height: 5px;
+      border-radius: 8px;
+      background-color: $highlight-color;
+    }
+  }
+
+  &-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 500px;
+    padding: 75px 0;
+
+    &--left {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+      &-top {
+        h1 {
+          width: 50%;
+          letter-spacing: 5px;
+          font-weight: lighter;
+          font-style: italic;
+          font-family: $secondary-font-family;
+          transform: translateX(-50%);
+          animation: show-left 0.5s ease-in-out forwards;
+        }
+
+        &--award {
+          font-style: italic;
+          font-weight: lighter;
+          font-size: $small-size;
+          transform: translateX(-50%);
+          animation: show-left 0.6s ease-in-out forwards;
+        }
+
+        &--underline {
+          width: 25px;
+          height: 2px;
+          border-radius: 8px;
+          background-color: $highlight-color;
+          transform: translateX(-50%);
+          animation: show-left 0.6s ease-in-out forwards;
+        }
+      }
+
+      &-description {
+        width: 60%;
+        line-break: 10px;
+        font-size: $small-size;
+        font-weight: lighter;
+        letter-spacing: 1px;
+        transform: translateX(-50%);
+        animation: show-left 0.7s ease-in-out forwards;
+      }
+    }
+
+    &--right {
+      width: 50%;
+      position: relative;
+
+      &-cover {
+        position: absolute;
+        width: 40%;
+        top: 0;
+        left: 0;
+        transform: translate(-50px, 50px);
+
+        img {
+          width: 100%;
+        }
+      }
+
+      &-guy {
+        width: 750px;
+
+        img {
+          width: 100%;
+        }
+
+        p {
+          font-family: $primary-font-family;
+          font-size: 6rem;
+          font-style: italic;
+          position: absolute;
+          top: 0;
+          right: 0;
+          transform: translateY(-120px);
+        }
+      }
+    }
+
+    &--separator {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 75px;
+      width: 1px;
+      border-radius: 8px;
+      background-color: $secondary-color;
+    }
+  }
+}
+
+@keyframes show-left {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

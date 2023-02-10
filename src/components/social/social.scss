@@ -8,9 +8,9 @@
 
   a {
     text-decoration: none;
+    cursor: pointer;
 
     svg {
-      cursor: pointer;
       path {
         fill: $secondary-color;
         transition: all ease-out 0.2s;

@@ -83,18 +83,23 @@
       border: none;
       background: none;
       width: auto;
+      letter-spacing: 0;
+      transition: all ease-in 250ms;
 
       svg {
         margin-left: 10px;
         transform-origin: left center;
-        transition: transform ease-in 250ms;
+        transition: all ease-in 250ms;
       }
 
       &:hover {
+        letter-spacing: 1px;
+        transition: all ease-in 250ms;
+
         svg {
           transform: scaleX(1.2);
           transform-origin: left center;
-          transition: transform ease-in 250ms;
+          transition: all ease-in 250ms;
         }
       }
     }
