@@ -10,16 +10,16 @@ export const Logo = () => {
       <path
         d="M1 0.999995C1.17166 27.3439 3.0465 38.4441 16 38.5C28.1776 36.7366 30.6705 27.0029 31 0.999995"
         stroke="#D9D9D9"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M1 46L16 8.5L31 46"
         stroke="#7C5656"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

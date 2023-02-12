@@ -17,7 +17,7 @@ export const Mouse = () => {
       <path
         d="M15 13V24"
         stroke="white"
-        stroke-linecap="round"
+        strokeLinecap="round"
       />
     </svg>
   );
