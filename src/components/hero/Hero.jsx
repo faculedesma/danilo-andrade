@@ -13,6 +13,7 @@ const Hero = () => {
     const overlay = document.querySelector(
       '.hero-right--image-overlay'
     );
+    const box = document.querySelector('.hero-right--box');
 
     window.addEventListener('mousemove', (e) => {
       const { clientX, clientY } = e;
@@ -28,8 +29,19 @@ const Hero = () => {
         '--y': `${y}%`,
         duration: 0.3
       });
+
+      gsap.to(box, {
+        '--w': `${x}%`,
+        '--z': `${y}%`,
+        duration: 0.3
+      });
     });
   }, []);
+
+  const handlePrimaryCTAClick = () => {
+    const work = document.getElementById('work');
+    work.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <div className="container">
@@ -49,7 +61,10 @@ const Hero = () => {
             </div>
           </div>
           <div className="hero-left--ctas">
-            <PrimaryCTAButton label="projects" />
+            <PrimaryCTAButton
+              label="projects"
+              onClick={handlePrimaryCTAClick}
+            />
           </div>
         </div>
         <div className="hero-right">

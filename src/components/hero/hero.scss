@@ -74,7 +74,14 @@
         top: 0;
         left: 0;
         clip-path: circle(80px at var(--x, 0) var(--y, 0));
-        transition: clip-path 300ms linear;
+        transition: all 0.5s linear;
+
+        &:hover {
+          clip-path: circle(
+            100% at var(--x, 0) var(--y, 0)
+          );
+          transition: all 0.5s linear;
+        }
       }
 
       img {
