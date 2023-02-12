@@ -1,0 +1,50 @@
+@import '../../../utils/variables';
+
+.tooltip {
+  width: 200px;
+  height: 40px;
+  position: absolute;
+  left: 0;
+  bottom: -50px;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transform: scale(0);
+
+  p {
+    color: $secondary-color;
+    font-size: 0.75rem;
+  }
+}
+
+.show {
+  animation: show-tooltip 0.4s ease-in-out forwards;
+}
+
+.hide {
+  animation: hide-tooltip 0.4s ease-in-out forwards;
+}
+
+@keyframes show-tooltip {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes hide-tooltip {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
