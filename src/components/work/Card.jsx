@@ -3,7 +3,7 @@ import './work.scss';
 
 export const Card = ({ work }) => {
   return (
-    <div key={work.id} className="work-card">
+    <div id={work.id} className="work-card show-card">
       <div className="work-card--left">
         <div className="work-card--left-top">
           <h1>{work.title}</h1>
@@ -28,7 +28,9 @@ export const Card = ({ work }) => {
             src={work.images.guy.src}
             alt={work.images.guy.alt}
           />
-          <p>{work.order}</p>
+          <div className="work-card--right-order">
+            <h1>{work.order}</h1>
+          </div>
         </div>
       </div>
       <div className="work-card--separator"></div>

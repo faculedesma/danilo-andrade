@@ -2,6 +2,7 @@
 
 .work {
   min-height: 600px;
+  margin-top: 100px;
 
   &-title {
     display: flex;
@@ -19,7 +20,14 @@
       width: 55px;
       height: 5px;
       border-radius: 8px;
-      background-color: $highlight-color;
+      background-color: #7c5656;
+      transform: scaleX(1);
+      transition: all 0.2s ease-in;
+
+      &:hover {
+        transform: scaleX(1.1);
+        transition: all 0.2s ease-in;
+      }
     }
   }
 
@@ -32,9 +40,7 @@
 
   &-card {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: none;
     height: 500px;
     padding: 75px 0;
 
@@ -97,9 +103,13 @@
         top: 0;
         left: 0;
         transform: translate(-50px, 50px);
+        z-index: 2;
 
         img {
           width: 100%;
+          transform: scale(0);
+          animation: show-cover-image 0.4s ease-in-out
+            forwards;
         }
       }
 
@@ -108,16 +118,30 @@
 
         img {
           width: 100%;
+          transform: scaleX(0);
+          animation: show-guy-image 0.5s ease-in-out
+            forwards;
         }
+      }
 
-        p {
+      &-order {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(-50px);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+        h1 {
           font-family: $primary-font-family;
           font-size: 6rem;
           font-style: italic;
-          position: absolute;
-          top: 0;
-          right: 0;
-          transform: translateY(-120px);
+          margin: 0;
+          transform: translateY(-100%);
+          animation: show-card-order 0.2s ease-in-out
+            forwards;
         }
       }
     }
@@ -130,7 +154,15 @@
       width: 1px;
       border-radius: 8px;
       background-color: $secondary-color;
+      transform: scaleY(0);
+      animation: show-card-separator 0.8s ease-in forwards;
     }
+  }
+
+  .show-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
@@ -141,5 +173,48 @@
 
   100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes show-card-order {
+  0% {
+    transform: translateY(-100%);
+    transform-origin: bottom;
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes show-cover-image {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes show-guy-image {
+  0% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes show-card-separator {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+
+  100% {
+    transform: scaleY(1);
   }
 }
