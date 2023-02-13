@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { Card } from './Card';
 import { LineHorizontal } from '@/components/common/Seperators';
 import OsLadosCover from '@/assets/images/os-lados-cover.png';

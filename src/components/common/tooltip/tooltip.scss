@@ -6,27 +6,27 @@
   position: absolute;
   left: 0;
   bottom: -50px;
-  border-radius: 8px;
   border: 1px solid #ffffff;
-  background: transparent;
+  background-color: $secondary-color;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0.7;
   transform: scale(0);
+  z-index: 101;
 
   p {
-    color: $secondary-color;
+    color: $primary-color;
     font-size: 0.75rem;
   }
 }
 
 .show {
-  animation: show-tooltip 0.4s ease-in-out forwards;
+  animation: show-tooltip 0.3s ease-in-out forwards;
 }
 
 .hide {
-  animation: hide-tooltip 0.4s ease-in-out forwards;
+  animation: hide-tooltip 0.3s ease-in-out forwards;
 }
 
 @keyframes show-tooltip {

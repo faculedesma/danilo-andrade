@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { useIntersection } from '@/components/common/hooks/useIntersection';
 import { Rectangle } from '@/assets/svgs/Rectangle';
 import { Circle } from '@/assets/svgs/Circle';
 import { Mouse } from '@/assets/svgs/Mouse';
@@ -9,6 +10,9 @@ import gsap from 'gsap';
 import './hero.scss';
 
 const Hero = () => {
+  const heroRef = useRef();
+  const isInViewport = useIntersection(heroRef, '50px');
+
   useEffect(() => {
     const overlay = document.querySelector(
       '.hero-right--image-overlay'
@@ -45,7 +49,10 @@ const Hero = () => {
 
   return (
     <div className="container">
-      <div className="hero">
+      <div
+        ref={heroRef}
+        className={`hero ${isInViewport ? 'show' : 'hide'}`}
+      >
         <div className="hero-left">
           <div className="hero-left--title">
             <div className="hero-left--title-top">

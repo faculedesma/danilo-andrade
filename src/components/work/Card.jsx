@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { useIntersection } from '@/components/common/hooks/useIntersection';
 import './work.scss';
 
 export const Card = ({ work }) => {
+  const workOneRef = useRef();
+  const isInViewport = useIntersection(workOneRef, '0px');
+
   return (
-    <div id={work.id} className="work-card show-card">
+    <div
+      id={work.id}
+      className={`work-card ${
+        isInViewport ? 'show-card' : 'hide-card'
+      }`}
+    >
       <div className="work-card--left">
         <div className="work-card--left-top">
           <h1>{work.title}</h1>
           <p className="work-card--left-top--award">
             {work.award}
           </p>
-          <div className="work-card--left-top--underline"></div>
+          <div
+            ref={workOneRef}
+            className="work-card--left-top--underline"
+          ></div>
         </div>
         <p className="work-card--left-description">
           {work.description}

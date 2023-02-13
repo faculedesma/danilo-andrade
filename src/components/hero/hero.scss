@@ -19,9 +19,6 @@
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 
       &-top {
-        transform: translateX(-50%);
-        animation: show-left 0.5s ease-in-out forwards;
-
         h1 {
           letter-spacing: 2px;
           text-transform: uppercase;
@@ -37,9 +34,6 @@
       &-sub {
         width: 60%;
         line-height: 30px;
-        transform: translateX(-50%);
-        animation: show-left 0.7s ease-in-out forwards;
-
         p {
           font-weight: lighter;
           b {
@@ -50,8 +44,6 @@
     }
 
     &--ctas {
-      transform: translateX(-50%);
-      animation: show-left 0.6s ease-in-out forwards;
       padding-top: 100px;
     }
   }
@@ -86,8 +78,6 @@
 
       img {
         width: 100%;
-        transform: translateX(150%);
-        animation: show-image 0.6s ease-in-out forwards;
       }
     }
 
@@ -124,8 +114,6 @@
 
     &--line {
       svg {
-        transform: translateY(75px) scale(0.5);
-        animation: loop-mouse 2s ease-in-out infinite;
         height: 250px;
       }
     }
@@ -157,15 +145,99 @@
       left: 0;
       opacity: 0.1;
     }
+  }
+}
 
-    svg:first-child {
-      transform: scale(0) translateX(-50%);
-      animation: show-small-circle 0.8s ease-in-out forwards;
+.show {
+  .hero {
+    &-left {
+      &--title {
+        &-top {
+          animation: show-left 0.5s ease-in-out forwards;
+        }
+
+        &-sub {
+          animation: show-left 0.7s ease-in-out forwards;
+        }
+      }
+
+      &--ctas {
+        animation: show-left 0.6s ease-in-out forwards;
+      }
     }
 
-    svg:last-child {
-      transform: scale(0) translateX(-50%);
-      animation: show-big-circle 0.6s ease-in-out forwards;
+    &-right {
+      &--image {
+        img {
+          animation: show-image 0.6s ease-in-out forwards;
+        }
+      }
+    }
+
+    &-scroll {
+      &--line {
+        svg {
+          animation: loop-mouse 2s ease-in-out infinite;
+        }
+      }
+    }
+
+    &-circles {
+      svg:first-child {
+        animation: show-small-circle 0.8s ease-in-out
+          forwards;
+      }
+
+      svg:last-child {
+        animation: show-big-circle 0.6s ease-in-out forwards;
+      }
+    }
+  }
+}
+
+.hide {
+  .hero {
+    &-left {
+      &--title {
+        &-top {
+          animation: show-left 0.5s ease-in-out forwards;
+        }
+
+        &-sub {
+          animation: show-left 0.7s ease-in-out forwards;
+        }
+      }
+
+      &--ctas {
+        animation: hide-left 0.6s ease-in-out forwards;
+      }
+    }
+
+    &-right {
+      &--image {
+        img {
+          animation: hide-image 0.6s ease-in-out forwards;
+        }
+      }
+    }
+
+    &-scroll {
+      &--line {
+        svg {
+          animation: loop-mouse 2s ease-in-out infinite;
+        }
+      }
+    }
+
+    &-circles {
+      svg:first-child {
+        animation: hide-small-circle 0.8s ease-in-out
+          forwards;
+      }
+
+      svg:last-child {
+        animation: hide-big-circle 0.6s ease-in-out forwards;
+      }
     }
   }
 }
@@ -207,6 +279,46 @@
 
   100% {
     transform: scale(1) translateX(0);
+  }
+}
+
+@keyframes hide-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes hide-image {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+@keyframes hide-small-circle {
+  0% {
+    transform: scale(0.9) translateX(0);
+  }
+
+  100% {
+    transform: scale(0) translateX(-50%);
+  }
+}
+
+@keyframes hide-big-circle {
+  0% {
+    transform: scale(1) translateX(0);
+  }
+
+  100% {
+    transform: scale(0) translateX(-50%);
   }
 }
 

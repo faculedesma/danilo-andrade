@@ -128,7 +128,7 @@
       justify-content: space-between;
       list-style: none;
       padding: 0;
-      height: 350px;
+      height: 500px;
       margin-top: 100px;
 
       &-item {
@@ -136,7 +136,6 @@
         flex-direction: column;
         justify-content: space-between;
         height: 50px;
-        // clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 
         a {
           font-family: $primary-font-family;
@@ -165,7 +164,7 @@
       height: 1px;
       border-radius: 8px;
       background-color: $secondary-color;
-      margin-top: 150px;
+      margin-top: 50px;
     }
 
     svg {

@@ -20,8 +20,6 @@ export const Links = () => {
     }, 2500);
   };
 
-  console.log(tooltipRef);
-
   return (
     <div className="social">
       <a

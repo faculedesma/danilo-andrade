@@ -19,6 +19,11 @@ const links = [
     label: 'About me'
   },
   {
+    id: 'gallery',
+    href: '/gallery',
+    label: 'Gallery'
+  },
+  {
     id: 'contact',
     href: '/contact',
     label: 'Contact'

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { useIntersection } from '@/components/common/hooks/useIntersection';
 import { Links } from '@/components/social/Social';
 import { SecondaryCTAButton } from '@/components/buttons/SecondaryCTAButton';
 import { BoxFooter } from '@/assets/svgs/BoxFooter';
@@ -7,9 +8,17 @@ import { CircleCut } from '@/assets/svgs/CircleCut';
 import './footer.scss';
 
 const Footer = () => {
+  const footerRef = useRef();
+  const isInViewport = useIntersection(footerRef, '50px');
+
   return (
     <div className="container">
-      <footer className="footer">
+      <footer
+        ref={footerRef}
+        className={`footer ${
+          isInViewport ? 'show' : 'hide'
+        }`}
+      >
         <div className="footer-left">
           <div className="footer-left--top">
             <div className="footer-left--top-title">
