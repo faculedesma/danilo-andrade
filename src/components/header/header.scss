@@ -7,11 +7,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: $primary-color;
+  background: linear-gradient($primary-color, transparent);
   z-index: 100;
 
   &-logo {
@@ -57,9 +56,6 @@
 
     &--links {
       width: 200px;
-    }
-
-    &--cta {
     }
 
     &--icon {
@@ -148,13 +144,6 @@
             color: $highlight-color;
             transition: all ease-in-out 0.2s;
           }
-        }
-
-        .underline {
-          width: 55px;
-          height: 5px;
-          border-radius: 8px;
-          background-color: $highlight-color;
         }
       }
     }

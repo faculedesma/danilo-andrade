@@ -50,6 +50,7 @@ const Hero = () => {
   return (
     <div className="container">
       <div
+        id="hero"
         ref={heroRef}
         className={`hero ${isInViewport ? 'show' : 'hide'}`}
       >

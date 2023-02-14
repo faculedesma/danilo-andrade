@@ -14,6 +14,7 @@ const Footer = () => {
   return (
     <div className="container">
       <footer
+        id="contact"
         ref={footerRef}
         className={`footer ${
           isInViewport ? 'show' : 'hide'

@@ -18,7 +18,14 @@ const App = () => {
 
   const handleIsLoaded = () => setIsLoading(false);
 
-  const followCallback = useCallback((e, mouseFollow) => {
+  const handleFollowMouseMove = useCallback((e) => {
+    const mouseFollow =
+      document.getElementById('mouse-follow');
+    gsap.set(mouseFollow, {
+      xPercent: -50,
+      yPercent: -50,
+      scale: 0
+    });
     gsap.to(mouseFollow, {
       duration: 0.5,
       overwrite: 'auto',
@@ -40,38 +47,7 @@ const App = () => {
         ease: 'none'
       }
     });
-    // tl.to(
-    //   mouseFollow,
-    //   {
-    //     overwrite: 'auto',
-    //     scale: 0,
-    //     stagger: {
-    //       amount: 0.15,
-    //       from: 'end',
-    //       ease: 'none'
-    //     }
-    //   },
-    //   '<+=2.5'
-    // );
   }, []);
-
-  useEffect(() => {
-    const mouseFollow =
-      document.getElementById('mouse-follow');
-    gsap.set(mouseFollow, {
-      xPercent: -50,
-      yPercent: -50,
-      scale: 0
-    });
-
-    window.addEventListener('mousemove', (e) =>
-      followCallback(e, mouseFollow)
-    );
-    window.addEventListener('scroll', (e) =>
-      followCallback(e, mouseFollow)
-    );
-  }),
-    [];
 
   useEffect(() => {
     setIsLoading(true);
@@ -85,6 +61,15 @@ const App = () => {
           : prevPercentage + random
       );
     }, 200);
+
+    if (mounted.current) {
+      window.addEventListener('mousemove', (e) =>
+        handleFollowMouseMove(e)
+      );
+      window.addEventListener('scroll', (e) =>
+        handleFollowMouseMove(e)
+      );
+    }
 
     return () => {
       mounted.current = false;

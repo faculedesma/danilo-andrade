@@ -30,9 +30,17 @@ const Header = () => {
     setIsOpen(buttonRef.current.className);
   };
 
+  const handleLogoClick = () => {
+    const top = document.getElementById('home');
+    top.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <header className="header">
-      <div className="header-logo">
+      <div
+        onClick={handleLogoClick}
+        className="header-logo"
+      >
         <Logo />
       </div>
       <div className="header-right">
@@ -49,7 +57,7 @@ const Header = () => {
           </button>
         </div>
       </div>
-      <Menu isOpen={isOpen} />
+      <Menu isOpen={isOpen} toggleMenu={toggleMenu} />
     </header>
   );
 };

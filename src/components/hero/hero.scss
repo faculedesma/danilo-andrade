@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 170px 0;
+  padding: 170px 0 150px;
 
   &-left {
     height: auto;
@@ -87,7 +87,7 @@
         bottom: 0;
         right: 0;
         height: 610px;
-        transform: translateX(20%);
+        transform: translate(20%, -24%);
         z-index: -1;
       }
 
@@ -109,7 +109,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    transform: translate(120px, -20px);
+    transform: translate(100%, -52%);
     opacity: 0.5;
 
     &--line {
@@ -133,9 +133,8 @@
 
   &-circles {
     position: absolute;
-    top: 0;
     left: -50%;
-    top: -10%;
+    top: 10%;
     opacity: 0.3;
     z-index: -1;
 
