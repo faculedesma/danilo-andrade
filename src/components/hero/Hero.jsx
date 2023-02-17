@@ -86,7 +86,6 @@ const Hero = () => {
           </div>
           <div className="hero-right--box">
             <Rectangle />
-            <p>Photo by Caroline Wimmer</p>
           </div>
         </div>
         <div className="hero-scroll">

@@ -45,7 +45,7 @@ const works = [
   },
   {
     id: 'work-three',
-    title: 'os Lados Da Rua',
+    title: 'BANDIDOS',
     award:
       'Winner of the 22º Cine Ceará for Best ShortFilm',
     description:

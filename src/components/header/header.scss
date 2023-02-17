@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient($primary-color, transparent);
+  background: $primary-color;
   z-index: 100;
 
   &-logo {
@@ -144,6 +144,13 @@
             color: $highlight-color;
             transition: all ease-in-out 0.2s;
           }
+        }
+
+        &--underline {
+          width: 55px;
+          height: 5px;
+          border-radius: 8px;
+          background-color: $highlight-color;
         }
       }
     }
