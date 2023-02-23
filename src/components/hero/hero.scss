@@ -207,7 +207,7 @@
 
     &-image {
       img {
-        animation: show-image 0.8s ease-in-out forwards;
+        animation: show-image 1s ease-in-out forwards;
       }
     }
 
@@ -236,9 +236,9 @@
     &-scroll {
       &--line {
         svg {
-          transform: translateY(75px) scale(0.5);
+          transform: translateY(75px);
 
-          path:last-child {
+          path {
             animation: loop-mouse 2.1s ease-in-out infinite;
           }
         }
@@ -261,7 +261,7 @@
 
     &-image {
       img {
-        animation: hide-image 0.8s ease-in-out forwards;
+        animation: hide-image 1s ease-in-out forwards;
       }
     }
 
