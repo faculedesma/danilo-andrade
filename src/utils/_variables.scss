@@ -22,13 +22,19 @@
 $primary-font-family: 'Futura';
 $secondary-font-family: 'Poppins';
 
-$very-small-size: 0.65rem;
-$small-size: 1rem;
-$medium-size: 1.5rem;
-$large-size: 2rem;
-
 // colors
 $primary-color: #121216;
-$secondary-color: #ffffff;
+$secondary-color: #e4e4e4;
 $highlight-color: #7c5656;
+$shades-black: #000000;
+$shades-white: #ffffff;
 $shades-gray: #797979;
+
+// sizes - desktop
+
+$heading-size: 3.75rem;
+$heading-letter-spacing: 5px;
+
+$subheading-size: 1.5rem;
+$paragraph-one-size: 1rem;
+$paragraph-two-size: 0.75rem;
