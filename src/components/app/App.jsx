@@ -1,13 +1,8 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  useCallback
-} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Home from '@/components/home/Home';
 import Loader from '@/components/loader/Loader';
+import { useMouseFollow } from '@/components/common/hooks/useMouseFollow';
 import { MouseFollow } from '@/components/mouse-follow/MouseFollow';
-import gsap from 'gsap';
 import './app.scss';
 
 const App = () => {
@@ -15,39 +10,9 @@ const App = () => {
   const [percentage, setPercentage] = useState(0);
   const mounted = useRef(false);
   const appRef = useRef(null);
+  useMouseFollow('mouse-follow');
 
   const handleIsLoaded = () => setIsLoading(false);
-
-  const handleFollowMouseMove = useCallback((e) => {
-    const mouseFollow =
-      document.getElementById('mouse-follow');
-    gsap.set(mouseFollow, {
-      xPercent: -50,
-      yPercent: -50,
-      scale: 0
-    });
-    gsap.to(mouseFollow, {
-      duration: 0.5,
-      overwrite: 'auto',
-      x: e.clientX,
-      y: e.clientY,
-      stagger: 0.15,
-      ease: 'none'
-    });
-
-    let tl = gsap.timeline({
-      defaults: { duration: 0.5, ease: 'none' }
-    });
-    tl.to(mouseFollow, {
-      scale: 1,
-      overwrite: 'auto',
-      stagger: {
-        amount: 0.15,
-        from: 'start',
-        ease: 'none'
-      }
-    });
-  }, []);
 
   useEffect(() => {
     setIsLoading(true);
@@ -61,15 +26,6 @@ const App = () => {
           : prevPercentage + random
       );
     }, 200);
-
-    if (mounted.current) {
-      window.addEventListener('mousemove', (e) =>
-        handleFollowMouseMove(e)
-      );
-      window.addEventListener('scroll', (e) =>
-        handleFollowMouseMove(e)
-      );
-    }
 
     return () => {
       mounted.current = false;
