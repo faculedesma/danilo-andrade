@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import {
-  Twitter,
   Instagram,
-  Mail
+  Mail,
+  Pinterest
 } from '@/assets/svgs/Social';
 import { Tooltip } from '@/components/common/tooltip/Tooltip';
 import './social.scss';
@@ -27,7 +27,7 @@ export const Links = () => {
         href="https://www.instagram.com/daniloandra_de/"
         target="_blank"
       >
-        <Twitter />
+        <Pinterest />
       </a>
       <a
         className="instagram"
