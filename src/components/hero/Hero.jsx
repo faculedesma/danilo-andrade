@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { useIntersection } from '@/components/common/hooks/useIntersection';
-import { Rectangle } from '@/assets/svgs/Rectangle';
-import { Circle } from '@/assets/svgs/Circle';
 import { Mouse } from '@/assets/svgs/Mouse';
 import { PrimaryCTAButton } from '@/components/buttons/PrimaryCTAButton';
+import { LineHorizontal } from '@/components/common/Seperators';
+import { Links } from '@/components/social/Social';
 import CoverPhoto from '@/assets/images/cover-photo.png';
 import CoverPhotoPsych from '@/assets/images/cover-photo-psych.png';
 import gsap from 'gsap';
@@ -11,13 +11,12 @@ import './hero.scss';
 
 const Hero = () => {
   const heroRef = useRef();
-  const isInViewport = useIntersection(heroRef, '50px');
+  const isInViewport = useIntersection(heroRef, '0px');
 
   useEffect(() => {
     const overlay = document.querySelector(
-      '.hero-right--image-overlay'
+      '.hero-image--overlay'
     );
-    const box = document.querySelector('.hero-right--box');
 
     window.addEventListener('mousemove', (e) => {
       const { clientX, clientY } = e;
@@ -33,12 +32,6 @@ const Hero = () => {
         '--y': `${y}%`,
         duration: 0.3
       });
-
-      gsap.to(box, {
-        '--w': `${x}%`,
-        '--z': `${y}%`,
-        duration: 0.3
-      });
     });
   }, []);
 
@@ -48,60 +41,57 @@ const Hero = () => {
   };
 
   return (
-    <div className="container">
-      <div
-        id="hero"
-        ref={heroRef}
-        className={`hero ${isInViewport ? 'show' : 'hide'}`}
-      >
-        <div className="hero-left">
-          <div className="hero-left--title">
-            <div className="hero-left--title-top">
+    <>
+      <div className="container">
+        <div
+          id="hero"
+          ref={heroRef}
+          className={`hero ${
+            isInViewport ? 'show' : 'hide'
+          }`}
+        >
+          <div className="hero-title">
+            <div className="hero-title--name">
               <h1>Danilo</h1>
+            </div>
+            <div className="hero-title--surname">
               <h1>Andrade</h1>
             </div>
-            <div className="hero-left--title-sub">
-              <p>
-                I’m am <b>trained actor</b> that is very
-                passionate about something you think is
-                important to achieve in acting
-              </p>
-            </div>
           </div>
-          <div className="hero-left--ctas">
+          <div className="hero-cta">
             <PrimaryCTAButton
-              label="projects"
+              label="know me"
               onClick={handlePrimaryCTAClick}
             />
           </div>
-        </div>
-        <div className="hero-right">
-          <div className="hero-right--image">
+          <div className="hero-image">
             <img src={CoverPhoto} alt="cover-bw" />
             <img
               src={CoverPhotoPsych}
               alt="cover-psych"
-              className="hero-right--image-overlay"
+              className="hero-image--overlay"
             />
           </div>
-          <div className="hero-right--box">
-            <Rectangle />
+          <div className="hero-underline">
+            <LineHorizontal />
           </div>
-        </div>
-        <div className="hero-scroll">
-          <div className="hero-scroll--text">
-            <p>scroll down</p>
+          <div className="hero-links">
+            <Links />
           </div>
-          <div className="hero-scroll--line">
-            <Mouse />
+          <div className="hero-scroll">
+            <div className="hero-scroll--text">
+              <p>scroll down</p>
+            </div>
+            <div className="hero-scroll--line">
+              <Mouse />
+            </div>
           </div>
-        </div>
-        <div className="hero-circles">
-          <Circle />
-          <Circle />
         </div>
       </div>
-    </div>
+      <div className="hero-background">
+        <div className="hero-background--gradient"></div>
+      </div>
+    </>
   );
 };
 

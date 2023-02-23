@@ -3,6 +3,7 @@ import Header from '@/components/header/Header';
 import Hero from '@/components/hero/Hero';
 import Work from '@/components/work/Work';
 import Footer from '@/components/footer/Footer';
+import AboutMe from '@/components/about-me/AboutMe';
 import './home.scss';
 
 const Home = ({ isLoading }) => {
@@ -14,7 +15,8 @@ const Home = ({ isLoading }) => {
       <Header />
       <Hero />
       <Work />
-      <Footer />
+      {/* <AboutMe /> */}
+      {/* <Footer /> */}
     </div>
   );
 };
