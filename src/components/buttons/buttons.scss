@@ -11,14 +11,14 @@
   &-cta {
     &--primary {
       position: relative;
-      height: 120px;
-      width: 120px;
+      height: 140px;
+      width: 140px;
       border-radius: 50%;
-      border: 1px solid $shades-gray;
+      border: 1px solid $secondary-color;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: transparent;
+      background-color: rgba($primary-color, 0.6);
       z-index: 2;
       transform: scale(1);
       transition: all 0.2s ease-in-out;
@@ -27,23 +27,22 @@
         position: absolute;
         top: 0;
         left: 0;
-        height: 110px;
-        width: 110px;
+        height: 130px;
+        width: 130px;
         border-radius: 50%;
-        border: 1px solid $secondary-color;
-        transform: translate(3%, 2%);
+        border: 1px solid $shades-gray;
+        transform: translate(2.5%, 2.5%);
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        background-color: transparent;
+        background-color: rgba($primary-color, 0.6);
         transition: all ease-in-out 0.4s;
         z-index: 1;
 
         label {
           cursor: inherit;
           font-weight: bold;
-          letter-spacing: 2px;
           transition: all 0.4s ease-in-out;
         }
 

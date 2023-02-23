@@ -4,10 +4,10 @@
   width: 200px;
   height: 40px;
   position: absolute;
-  left: 0;
-  bottom: -50px;
-  border: 1px solid #ffffff;
-  background-color: $secondary-color;
+  left: 50px;
+  bottom: 0;
+  border: 1px solid $secondary-color;
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,17 +16,17 @@
   z-index: 101;
 
   p {
-    color: $primary-color;
+    color: $secondary-color;
     font-size: 0.75rem;
   }
 }
 
 .show {
-  animation: show-tooltip 0.3s ease-in-out forwards;
+  animation: show-tooltip 0.2s ease-in-out forwards;
 }
 
 .hide {
-  animation: hide-tooltip 0.3s ease-in-out forwards;
+  animation: hide-tooltip 0.2s ease-in-out forwards;
 }
 
 @keyframes show-tooltip {
