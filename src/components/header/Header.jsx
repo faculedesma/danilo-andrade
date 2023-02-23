@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import { Logo } from '@/assets/svgs/Logo';
-import { Links } from '@/components/social/Social';
 import { SecondaryCTAButton } from '@/components/buttons/SecondaryCTAButton';
 import { Menu } from './Menu';
 import './header.scss';
@@ -36,29 +35,26 @@ const Header = () => {
   };
 
   return (
-    <header className="header">
-      <div
-        onClick={handleLogoClick}
-        className="header-logo"
-      >
-        <Logo />
-      </div>
-      <div className="header-right">
-        <div className="header-right--links">
-          <Links />
-        </div>
-        <div className="header-right--cta">
-          <SecondaryCTAButton label="call me" />
-        </div>
-        <div className="header-right--icon">
+    <>
+      <header className="header">
+        <div className="header-toggle">
           <button ref={buttonRef} onClick={toggleMenu}>
             <div></div>
             <div></div>
           </button>
         </div>
-      </div>
+        {/* <div
+          onClick={handleLogoClick}
+          className="header-logo"
+        >
+          <Logo />
+        </div> */}
+        <div className="header-cta">
+          <SecondaryCTAButton label="get in touch" />
+        </div>
+      </header>
       <Menu isOpen={isOpen} toggleMenu={toggleMenu} />
-    </header>
+    </>
   );
 };
 

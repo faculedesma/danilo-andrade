@@ -1,6 +1,6 @@
 import React from 'react';
 import { CircleCut } from '@/assets/svgs/CircleCut';
-import './header.scss';
+import './menu.scss';
 
 const links = [
   {
@@ -19,11 +19,6 @@ const links = [
     label: 'About me'
   },
   {
-    id: 'gallery',
-    href: '/gallery',
-    label: 'Gallery'
-  },
-  {
     id: 'contact',
     href: '/contact',
     label: 'Contact'
@@ -39,17 +34,12 @@ export const Menu = ({ isOpen, toggleMenu }) => {
   };
 
   return (
-    <div
-      className={`header-menu ${isOpen ? 'show-menu' : ''}`}
-    >
+    <div className={`menu ${isOpen ? 'show-menu' : ''}`}>
       <div className="container">
-        <ul className="header-menu--links">
+        <ul className="menu-links">
           {links.map((link, index) => {
             return (
-              <li
-                key={index}
-                className="header-menu--links-item"
-              >
+              <li key={index} className="menu-links--item">
                 <a
                   onClick={(e) =>
                     handleLinkClick(e, link.id)
@@ -62,7 +52,7 @@ export const Menu = ({ isOpen, toggleMenu }) => {
             );
           })}
         </ul>
-        <div className="header-menu--separator"></div>
+        <div className="menu-separator"></div>
         <CircleCut />
       </div>
     </div>
