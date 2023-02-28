@@ -1,80 +1,56 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card } from './Card';
-import { LineHorizontal } from '@/components/common/Seperators';
-import OsLadosCover from '@/assets/images/os-lados-cover.png';
-import OsLadosGuy from '@/assets/images/os-lados-guy.png';
-import OitaVentosCover from '@/assets/images/oita-ventos-cover.png';
-import OitaVentosGuy from '@/assets/images/oita-ventos-guy.png';
+import { PrimaryCTAButton } from '../buttons/PrimaryCTAButton';
+import { works } from '@/data/Works';
 import './work.scss';
 
-const works = [
-  {
-    id: 'work-one',
-    title: 'os Lados Da Rua',
-    award:
-      'Winner of the 22º Cine Ceará for Best ShortFilm',
-    description:
-      'A thriliing movie about someone who probablymeets someone, outiside or inside. Must see if you like suspense and mystery.',
-    images: {
-      cover: {
-        src: OsLadosCover,
-        alt: 'os-lados-da-rua-cover'
-      },
-      guy: { src: OsLadosGuy, alt: 'os-lados-da-rua-guy' }
-    },
-    order: '01'
-  },
-  {
-    id: 'work-two',
-    title: 'Oita Ventos',
-    award:
-      'Winner of the 22º Cine Ceará for Best ShortFilm',
-    description:
-      'A thriliing movie about someone who probablymeets someone, outiside or inside. Must see if you like suspense and mystery.',
-    images: {
-      cover: {
-        src: OitaVentosCover,
-        alt: 'oita-ventos-cover'
-      },
-      guy: {
-        src: OitaVentosGuy,
-        alt: 'oita-ventos-guy'
-      }
-    },
-    order: '02'
-  },
-  {
-    id: 'work-three',
-    title: 'BANDIDOS',
-    award:
-      'Winner of the 22º Cine Ceará for Best ShortFilm',
-    description:
-      'A thriliing movie about someone who probablymeets someone, outiside or inside. Must see if you like suspense and mystery.',
-    images: {
-      cover: {
-        src: OsLadosCover,
-        alt: 'os-lados-da-rua-cover'
-      },
-      guy: { src: OsLadosGuy, alt: 'os-lados-da-rua-guy' }
-    },
-    order: '03'
-  }
-];
-
 const Work = () => {
+  const [selected, setSelected] = useState([]);
+
+  const showMoreButton = selected.length !== works.length;
+
+  useEffect(() => {
+    const promoted = works.filter(
+      (work, index) => index <= 2
+    );
+    setSelected(promoted);
+  }, []);
+
+  const handleViewMore = () => {
+    const updated = works.filter(
+      (work, index) => index <= selected.length + 2
+    );
+    setSelected(updated);
+  };
+
+  useEffect(() => {
+    window.scrollBy({
+      top: 200,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, [selected.length]);
+
   return (
     <div id="work" className="container">
-      <LineHorizontal />
       <div className="work">
         <div className="work-title">
-          <h1>Work</h1>
-          <div className="work-title--underline"></div>
+          <h2>Work</h2>
         </div>
         <div className="work-cards">
-          {works.map((work) => {
+          {selected.map((work) => {
             return <Card key={work.id} work={work} />;
           })}
         </div>
+        {showMoreButton ? (
+          <div className="work-more">
+            <div className="work-more--line"></div>
+            <PrimaryCTAButton
+              label="view more"
+              onClick={handleViewMore}
+            />
+          </div>
+        ) : null}
       </div>
     </div>
   );

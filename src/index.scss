@@ -32,6 +32,13 @@ h1 {
   margin: 0;
 }
 
+h2 {
+  font-family: $primary-font-family;
+  font-size: $heading-size;
+  letter-spacing: $heading-letter-spacing;
+  margin: 0;
+}
+
 button {
   font-size: $paragraph-two-size;
   border-radius: 0.5rem;
