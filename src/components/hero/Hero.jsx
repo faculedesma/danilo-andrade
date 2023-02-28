@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useIntersection } from '@/components/common/hooks/useIntersection';
 import { Mouse } from '@/assets/svgs/Mouse';
 import { PrimaryCTAButton } from '@/components/buttons/PrimaryCTAButton';
@@ -10,7 +10,13 @@ import gsap from 'gsap';
 import './hero.scss';
 
 const Hero = () => {
-  const heroRef = useRef();
+  const [title, setTitle] = useState({
+    first: 'Danilo',
+    last: 'Andrade'
+  });
+
+  const heroRef = useRef(null);
+  const titleRef = useRef(null);
   const isInViewport = useIntersection(heroRef, '0px');
 
   useEffect(() => {
@@ -35,27 +41,52 @@ const Hero = () => {
     });
   }, []);
 
+  useEffect(() => {
+    if (isInViewport) {
+      heroRef.current.classList.remove('hide');
+      heroRef.current.classList.add('show');
+    } else {
+      heroRef.current.classList.remove('show');
+      heroRef.current.classList.add('hide');
+    }
+  }, [isInViewport]);
+
   const handlePrimaryCTAClick = () => {
     const work = document.getElementById('work');
     work.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const handleUpdateTitle = () => {
+    titleRef.current.classList.add('red-show');
+    setTimeout(() => {
+      setTitle({
+        first: 'Trained',
+        last: 'Actor'
+      });
+    }, 1000);
+    setTimeout(() => {
+      titleRef.current.classList.remove('red-show');
+      setTitle({
+        first: 'Danilo',
+        last: 'Andrade'
+      });
+    }, 2500);
+  };
+
   return (
     <>
       <div className="container">
-        <div
-          id="hero"
-          ref={heroRef}
-          className={`hero ${
-            isInViewport ? 'show' : 'hide'
-          }`}
-        >
-          <div className="hero-title">
+        <div id="hero" ref={heroRef} className="hero hide">
+          <div
+            onMouseEnter={handleUpdateTitle}
+            className="hero-title"
+            ref={titleRef}
+          >
             <div className="hero-title--name">
-              <h1>Danilo</h1>
+              <h1>{title.first}</h1>
             </div>
             <div className="hero-title--surname">
-              <h1>Andrade</h1>
+              <h1>{title.last}</h1>
             </div>
           </div>
           <div className="hero-cta">

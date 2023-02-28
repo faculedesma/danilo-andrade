@@ -51,30 +51,6 @@
       text-transform: uppercase;
     }
 
-    &:hover {
-      .hero-title--name {
-        ::after {
-          content: 'Trained';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          color: $highlight-color;
-          animation: show-title 0.3s ease-in-out forwards;
-        }
-      }
-
-      .hero-title--surname {
-        ::after {
-          content: 'Actor';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          color: $highlight-color;
-          animation: show-title 0.3s ease-in-out forwards;
-        }
-      }
-    }
-
     &--name {
       position: relative;
       clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
@@ -104,22 +80,29 @@
   &-image {
     position: relative;
     width: 400px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    transform: translateY(4px);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 
     img {
       width: 100%;
       filter: contrast(125%);
+      transform: translateY(150px);
+      opacity: 0;
       z-index: 1;
+
+      &:hover {
+        .hero-image--overlay {
+          display: inherit;
+        }
+      }
     }
 
     &--overlay {
+      display: none;
       width: 100%;
       position: absolute;
       top: 0;
       left: 0;
-      clip-path: circle(80px at var(--x, 0) var(--y, 0));
+      clip-path: circle(150px at var(--x, 0) var(--y, 0));
       transition: all 0.8s linear;
       z-index: 1;
 
@@ -161,11 +144,13 @@
     right: 0;
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
+    opacity: 0;
 
     &--line {
+      transform: translateY(-115px);
+
       svg {
-        height: 250px;
+        overflow: visible;
       }
     }
 
@@ -234,6 +219,8 @@
     }
 
     &-scroll {
+      animation: show-scroll 1s ease-in forwards;
+
       &--line {
         svg {
           transform: translateY(75px);
@@ -250,8 +237,16 @@
 .hide {
   .hero {
     &-title {
-      h1 {
-        animation: hide-title 0.8s ease-in-out forwards;
+      &--name {
+        h1 {
+          animation: hide-title 1.3s ease-in-out forwards;
+        }
+      }
+
+      &--surname {
+        h1 {
+          animation: hide-title 1.8s ease-in-out forwards;
+        }
       }
     }
 
@@ -286,6 +281,24 @@
         animation-delay: 0.3s;
       }
     }
+
+    &-scroll {
+      animation: hide-scroll 1s ease-in forwards;
+    }
+  }
+}
+
+.red-show {
+  .hero-title--name {
+    h1 {
+      animation: show-title-red 2s ease-in-out forwards;
+    }
+  }
+
+  .hero-title--surname {
+    h1 {
+      animation: show-title-red 2.5s ease-in-out forwards;
+    }
   }
 }
 
@@ -299,13 +312,37 @@
   }
 }
 
-@keyframes show-image {
+@keyframes show-title-red {
   0% {
-    transform: translateY(150%);
+    transform: translateY(0);
+    color: $secondary-color;
+  }
+
+  50% {
+    transform: translateY(100%);
+    color: $highlight-color;
+  }
+
+  75% {
+    transform: translateY(0);
+    color: $highlight-color;
   }
 
   100% {
-    transform: translateY(0);
+    transform: translateY(100%);
+    color: $secondary-color;
+  }
+}
+
+@keyframes show-image {
+  0% {
+    transform: translateY(150px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(4px);
+    opacity: 1;
   }
 }
 
@@ -341,6 +378,15 @@
   }
 }
 
+@keyframes show-scroll {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes hide-title {
   0% {
     transform: translateY(0);
@@ -353,11 +399,13 @@
 
 @keyframes hide-image {
   0% {
-    transform: translateY(0);
+    transform: translateY(4px);
+    opacity: 1;
   }
 
   100% {
-    transform: translateY(150%);
+    transform: translateY(150px);
+    opacity: 0;
   }
 }
 
@@ -388,6 +436,15 @@
     opacity: 1;
   }
 
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hide-scroll {
+  0% {
+    opacity: 1;
+  }
   100% {
     opacity: 0;
   }
