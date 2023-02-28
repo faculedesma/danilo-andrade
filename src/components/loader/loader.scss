@@ -7,10 +7,8 @@
   top: 0;
   left: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: $primary-color;
   z-index: 999;
 
   p {
@@ -18,11 +16,13 @@
     color: $secondary-color;
   }
 
-  &-text {
+  &-left,
+  &-right {
+    height: 100%;
+    width: 50%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 37%;
+    background-color: $primary-color;
 
     > p {
       text-transform: uppercase;
@@ -32,6 +32,28 @@
       opacity: 0;
       animation: loop-top 2s ease-in-out infinite;
     }
+  }
+
+  &-left {
+    justify-content: flex-end;
+    padding-right: 100px;
+  }
+
+  &-right {
+    justify-content: flex-start;
+    padding-left: 100px;
+  }
+
+  &-center {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
 
     &--circle {
       height: 130px;
@@ -59,35 +81,64 @@
         }
       }
     }
-    p:last-child {
+
+    &--percentage {
+      position: absolute;
+      bottom: 25%;
+
+      p {
+        font-weight: lighter;
+        font-style: italic;
+        margin: 0;
+      }
     }
-  }
-
-  &-percentage {
-    p {
-      font-weight: lighter;
-      font-style: italic;
-    }
-  }
-
-  &-show {
-    transform: scaleY(1);
-  }
-
-  &-hide {
-    transform: scaleY(0);
-    transform-origin: top;
-    animation: hide-loader ease-in-out 0.4s forwards;
   }
 }
 
-@keyframes hide-loader {
+.loader-hide {
+  .loader {
+    &-left {
+      animation: hide-loader-left ease-in-out 1s forwards;
+    }
+
+    &-right {
+      animation: hide-loader-right ease-in-out 1s forwards;
+    }
+
+    &-center {
+      animation: hide-loader-center ease-in-out 1s forwards;
+    }
+  }
+  z-index: -1;
+}
+
+@keyframes hide-loader-left {
   0% {
-    transform: scaleY(1);
+    transform: scaleX(1) translateX(0);
   }
 
   100% {
-    transform: scaleY(0);
+    transform: scaleX(0) translateX(-500px);
+  }
+}
+
+@keyframes hide-loader-right {
+  0% {
+    transform: scaleX(1) translateX(0);
+  }
+
+  100% {
+    transform: scaleX(0) translateX(500px);
+  }
+}
+
+@keyframes hide-loader-center {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
   }
 }
 

@@ -1,24 +1,46 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './loader.scss';
 
+const preventScroll = (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  return false;
+};
+
 const Loader = ({ isLoading, percentage }) => {
+  useEffect(() => {
+    window.addEventListener('wheel', preventScroll, {
+      passive: false
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!isLoading) {
+      window.removeEventListener('wheel', preventScroll);
+    }
+  }, [isLoading]);
+
   return (
     <div
       className={`loader ${
         isLoading ? 'loader-show' : 'loader-hide'
       }`}
     >
-      <div className="loader-text">
+      <div className="loader-left">
         <p>Here</p>
-        <div className="loader-text--circle">
-          <div className="loader-text--circle-inside">
+      </div>
+      <div className="loader-center">
+        <div className="loader-center--circle">
+          <div className="loader-center--circle-inside">
             <p>&</p>
           </div>
+          <div className="loader-center--percentage">
+            <p>{percentage}%</p>
+          </div>
         </div>
-        <p>Now</p>
       </div>
-      <div className="loader-percentage">
-        <p>{percentage}%</p>
+      <div className="loader-right">
+        <p>Now</p>
       </div>
     </div>
   );
