@@ -47,12 +47,13 @@
     align-items: center;
     justify-content: space-between;
     transition: all 0.1s ease-in;
-    margin: 150px 0;
+    margin: 150px 0 100px;
 
     &--top {
       height: 500px;
+      padding-bottom: 25px;
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: center;
 
       &-left,
@@ -70,28 +71,54 @@
         h1 {
           width: 75%;
           font-weight: lighter;
-          font-style: italic;
           font-family: $secondary-font-family;
         }
 
         &--award {
-          font-style: italic;
-          font-weight: lighter;
-          font-size: $paragraph-one-size;
+          clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            0 100%
+          );
+
+          p {
+            font-weight: lighter;
+            font-size: $paragraph-one-size;
+          }
         }
 
         &--underline {
-          width: 25px;
+          width: 35px;
           height: 2px;
           border-radius: 8px;
           background-color: $highlight-color;
         }
 
+        &--year {
+          clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            0 100%
+          );
+        }
+
         &--description {
-          line-break: 10px;
-          font-size: $paragraph-one-size;
-          font-weight: lighter;
-          letter-spacing: 1px;
+          width: 90%;
+          clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            0 100%
+          );
+
+          p {
+            line-height: 2;
+            font-size: $paragraph-one-size;
+            font-weight: lighter;
+            letter-spacing: 1px;
+          }
         }
       }
 
@@ -210,19 +237,29 @@
     &--top {
       &-left {
         h1 {
-          animation: show-left 0.5s ease-in-out forwards;
+          animation: show-top 0.5s ease-in-out forwards;
         }
 
         &--award {
-          animation: show-left 0.6s ease-in-out forwards;
+          p {
+            animation: show-top 0.6s ease-in-out forwards;
+          }
+        }
+
+        &--year {
+          p {
+            animation: show-top 0.7s ease-in-out forwards;
+          }
         }
 
         &--underline {
-          animation: show-left 0.7s ease-in-out forwards;
+          animation: show-left 0.8s ease-in-out forwards;
         }
 
         &--description {
-          animation: show-left 0.7s ease-in-out forwards;
+          p {
+            animation: show-top 0.8s ease-in-out forwards;
+          }
         }
       }
 
@@ -269,19 +306,29 @@
     &--top {
       &-left {
         h1 {
-          animation: hide-left 0.5s ease-in-out forwards;
+          animation: hide-top 0.5s ease-in-out forwards;
         }
 
         &--award {
-          animation: hide-left 0.6s ease-in-out forwards;
+          p {
+            animation: hide-top 0.6s ease-in-out forwards;
+          }
+        }
+
+        &--year {
+          p {
+            animation: hide-top 0.7s ease-in-out forwards;
+          }
         }
 
         &--underline {
-          animation: hide-left 0.7s ease-in-out forwards;
+          animation: hide-left 0.8s ease-in-out forwards;
         }
 
         &--description {
-          animation: hide-left 0.7s ease-in-out forwards;
+          p {
+            animation: hide-top 0.8s ease-in-out forwards;
+          }
         }
       }
 
@@ -323,13 +370,27 @@
   animation: hide-video 0.3s ease-in forwards;
 }
 
+@keyframes show-top {
+  0% {
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @keyframes show-left {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-150px);
+    opacity: 0;
   }
 
   100% {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -383,13 +444,27 @@
   }
 }
 
-@keyframes hide-left {
+@keyframes hide-top {
   0% {
-    transform: translateX(0);
+    transform: translateY(0);
+    opacity: 0;
   }
 
   100% {
-    transform: translateX(-100%);
+    transform: translateY(-150px);
+    opacity: 1;
+  }
+}
+
+@keyframes hide-left {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(-150px);
+    opacity: 1;
   }
 }
 

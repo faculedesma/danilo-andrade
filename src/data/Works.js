@@ -12,7 +12,7 @@ export const works = [
     award:
       'Winner of the 22º Cine Ceará for Best ShortFilm',
     description:
-      'A thriliing movie about someone who probablymeets someone, outiside or inside. Must see if you like suspense and mystery.',
+      'Carrao (Big Car) is a young boy who, despite his eccentric behavior, lives freely at the pace of life in a typical small Brazilian city. After being caught off-guard by an event that threatens to disrupt his whole world, he will need to find a way to set himself free again.',
     year: '2012',
     images: {
       cover: {

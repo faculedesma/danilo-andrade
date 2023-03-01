@@ -63,19 +63,19 @@ export const Card = ({ work }) => {
       <div className="work-card--top">
         <div className="work-card--top-left">
           <h1>{work.title}</h1>
-          <p className="work-card--top-left--award">
-            {work.award}
-          </p>
+          <div className="work-card--top-left--award">
+            <p>{work.award}</p>
+          </div>
+          <div className="work-card--top-left--underline"></div>
           <div
             ref={workTopRef}
-            className="work-card--top-left--underline"
-          ></div>
-          <p className="work-card--top-left--year">
-            {work.year}
-          </p>
-          <p className="work-card--top-left--description">
-            {work.description}
-          </p>
+            className="work-card--top-left--year"
+          >
+            <p>{work.year}</p>
+          </div>
+          <div className="work-card--top-left--description">
+            <p>{work.description}</p>
+          </div>
         </div>
         <div className="work-card--top-right">
           <div className="work-card--top-right--cover">
