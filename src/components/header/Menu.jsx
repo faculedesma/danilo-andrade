@@ -1,5 +1,4 @@
-import React from 'react';
-import { CircleCut } from '@/assets/svgs/CircleCut';
+import React, { useEffect, useRef } from 'react';
 import './menu.scss';
 
 const links = [
@@ -26,6 +25,8 @@ const links = [
 ];
 
 export const Menu = ({ isOpen, toggleMenu }) => {
+  const menuRef = useRef(null);
+
   const handleLinkClick = (e, sectionId) => {
     e.preventDefault();
     const section = document.getElementById(sectionId);
@@ -33,27 +34,43 @@ export const Menu = ({ isOpen, toggleMenu }) => {
     toggleMenu();
   };
 
+  useEffect(() => {
+    if (isOpen) {
+      menuRef.current.classList.remove('hide-menu');
+      menuRef.current.classList.add('show-menu');
+    } else {
+      if (menuRef.current.classList.contains('show-menu')) {
+        menuRef.current.classList.remove('show-menu');
+        menuRef.current.classList.add('hide-menu');
+      }
+    }
+  }, [isOpen]);
+
   return (
-    <div className={`menu ${isOpen ? 'show-menu' : ''}`}>
+    <div ref={menuRef} className="menu">
       <div className="container">
         <ul className="menu-links">
           {links.map((link, index) => {
             return (
-              <li key={index} className="menu-links--item">
-                <a
-                  onClick={(e) =>
-                    handleLinkClick(e, link.id)
-                  }
-                  href={link.href}
+              <div className="menu-links--container">
+                <li
+                  key={index}
+                  className="menu-links--container-item"
                 >
-                  {link.label}
-                </a>
-              </li>
+                  <a
+                    onClick={(e) =>
+                      handleLinkClick(e, link.id)
+                    }
+                    href={link.href}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              </div>
             );
           })}
         </ul>
         <div className="menu-separator"></div>
-        <CircleCut />
       </div>
     </div>
   );

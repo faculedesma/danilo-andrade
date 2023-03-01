@@ -9,8 +9,7 @@
   background-color: $primary-color;
   transform: scaleY(0);
   transform-origin: top;
-  transition: all 0.3s ease-in-out;
-  z-index: 3;
+  z-index: 10;
 
   &-links {
     display: flex;
@@ -22,29 +21,33 @@
     height: 500px;
     padding-top: 100px;
 
-    &--item {
+    &--container {
       height: 60px;
       clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
 
-      a {
-        font-family: $primary-font-family;
-        font-weight: bold;
-        font-size: 3rem;
-        color: $secondary-color;
-        transform: translateY(50%);
-        transition: color 0.2s ease-in-out;
+      &-item {
+        height: 100%;
+        transform: translateY(50px);
 
-        &:hover {
-          color: $highlight-color;
+        a {
+          font-family: $primary-font-family;
+          font-weight: bold;
+          font-size: 3rem;
+          color: $secondary-color;
           transition: color 0.2s ease-in-out;
-        }
-      }
 
-      &--underline {
-        width: 55px;
-        height: 5px;
-        border-radius: 8px;
-        background-color: $highlight-color;
+          &:hover {
+            color: $highlight-color;
+            transition: color 0.2s ease-in-out;
+          }
+        }
+
+        &--underline {
+          width: 55px;
+          height: 5px;
+          border-radius: 8px;
+          background-color: $highlight-color;
+        }
       }
     }
   }
@@ -66,25 +69,66 @@
 }
 
 .show-menu {
-  transform: scaleY(1);
-  transform-origin: top;
-  transition: all 0.3s ease-in-out;
+  animation: show-menu 0.3s ease-out forwards;
 
   .menu-links {
-    &--item {
-      a {
-        animation: show-item 0.8s ease-in-out;
+    &--container {
+      &-item {
+        animation: show-item 0.5s ease-in-out forwards;
       }
     }
   }
 }
 
+.hide-menu {
+  animation: hide-menu 0.5s ease-in-out forwards;
+
+  .menu-links {
+    &--container {
+      &-item {
+        animation: hide-item 0.3s ease-in-out forwards;
+      }
+    }
+  }
+}
+
+@keyframes show-menu {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes hide-menu {
+  0% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(0);
+  }
+}
+
 @keyframes show-item {
   0% {
-    transform: translateY(50%);
+    transform: translateY(75px);
   }
 
   100% {
     transform: translateY(0);
+  }
+}
+
+@keyframes hide-item {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(75px);
   }
 }
