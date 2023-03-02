@@ -6,6 +6,7 @@ body {
   place-items: center;
   width: 100dvw;
   height: 100dvh;
+  overflow-x: hidden;
 
   font-family: $secondary-font-family;
   font-size: $paragraph-one-size;
@@ -34,9 +35,13 @@ h1 {
 
 h2 {
   font-family: $primary-font-family;
-  font-size: $heading-size;
-  letter-spacing: $heading-letter-spacing;
+  font-size: $subheading-size;
+  letter-spacing: $subheading-letter-spacing;
   margin: 0;
+}
+
+p {
+  letter-spacing: 2px;
 }
 
 button {

@@ -2,17 +2,16 @@ import React, { useState, useEffect, useRef } from 'react';
 import Home from '@/components/home/Home';
 import Loader from '@/components/loader/Loader';
 import { useMouseFollow } from '@/components/common/hooks/useMouseFollow';
-import { MouseFollow } from '@/components/mouse-follow/MouseFollow';
 import './app.scss';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [percentage, setPercentage] = useState(0);
+
   const mounted = useRef(false);
   const appRef = useRef(null);
-  useMouseFollow('mouse-follow');
 
-  const handleIsLoaded = () => setIsLoading(false);
+  useMouseFollow('mouse-follow');
 
   useEffect(() => {
     setIsLoading(true);
@@ -38,6 +37,8 @@ const App = () => {
     }
   }, [percentage]);
 
+  const handleIsLoaded = () => setIsLoading(false);
+
   return (
     <div id="app" ref={appRef} className="app">
       <Home isLoading={isLoading} />
@@ -45,7 +46,6 @@ const App = () => {
         isLoading={isLoading}
         percentage={percentage}
       />
-      <MouseFollow />
     </div>
   );
 };
