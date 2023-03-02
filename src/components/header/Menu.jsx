@@ -52,11 +52,11 @@ export const Menu = ({ isOpen, toggleMenu }) => {
         <ul className="menu-links">
           {links.map((link, index) => {
             return (
-              <div className="menu-links--container">
-                <li
-                  key={index}
-                  className="menu-links--container-item"
-                >
+              <div
+                key={index}
+                className="menu-links--container"
+              >
+                <li className="menu-links--container-item">
                   <a
                     onClick={(e) =>
                       handleLinkClick(e, link.id)

@@ -34,6 +34,12 @@ const Header = () => {
     top.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const handleCTAClick = () => {
+    const work = document.getElementById('contact');
+    work.scrollIntoView({ behavior: 'smooth' });
+    setIsOpen(false);
+  };
+
   return (
     <>
       <header className="header">
@@ -50,7 +56,10 @@ const Header = () => {
           <Logo />
         </div> */}
         <div className="header-cta">
-          <SecondaryCTAButton label="get in touch" />
+          <SecondaryCTAButton
+            label="get in touch"
+            onClick={handleCTAClick}
+          />
         </div>
       </header>
       <Menu isOpen={isOpen} toggleMenu={toggleMenu} />

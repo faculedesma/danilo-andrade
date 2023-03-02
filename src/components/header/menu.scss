@@ -35,6 +35,7 @@
           font-size: 3rem;
           color: $secondary-color;
           transition: color 0.2s ease-in-out;
+          text-transform: uppercase;
 
           &:hover {
             color: $highlight-color;
