@@ -45,9 +45,6 @@ const Hero = () => {
     if (isInViewport) {
       heroRef.current.classList.remove('hide');
       heroRef.current.classList.add('show');
-    } else {
-      heroRef.current.classList.remove('show');
-      heroRef.current.classList.add('hide');
     }
   }, [isInViewport]);
 
@@ -76,7 +73,7 @@ const Hero = () => {
   return (
     <>
       <div className="container">
-        <div id="hero" ref={heroRef} className="hero hide">
+        <div id="hero" ref={heroRef} className="hero">
           <div
             onMouseEnter={handleUpdateTitle}
             className="hero-title"
