@@ -77,13 +77,18 @@
     }
 
     &--secondary {
+      position: relative;
       font-weight: bold;
       color: $secondary-color;
       border: none;
       background: none;
       width: auto;
+      height: 50px;
       letter-spacing: 0;
       transition: all ease-in 250ms;
+      display: flex;
+      align-content: center;
+      justify-content: space-around;
 
       svg {
         margin-left: 10px;
@@ -100,6 +105,16 @@
           transform-origin: left center;
           transition: all ease-in 250ms;
         }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .button {
+    &-cta {
+      &--secondary {
+        width: 230px;
       }
     }
   }

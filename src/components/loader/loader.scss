@@ -155,3 +155,25 @@
     opacity: 1;
   }
 }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .loader {
+    flex-direction: column;
+
+    &-left,
+    &-right {
+      width: 100dvw;
+      height: 50%;
+      justify-content: center;
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    &-center {
+      &--percentage {
+        position: absolute;
+        bottom: 10%;
+      }
+    }
+  }
+}

@@ -72,7 +72,6 @@
   &-cta {
     position: absolute;
     bottom: -65px;
-    left: 44.5%;
     opacity: 0;
     z-index: 2;
   }
@@ -461,5 +460,32 @@
 
   100% {
     transform: translateY(0);
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .hero {
+    height: 630px;
+
+    &-title {
+      h1 {
+        font-size: $heading-size-mobile;
+      }
+    }
+
+    &-cta {
+    }
+
+    &-image {
+      width: 300px;
+    }
+
+    &-links {
+      display: none;
+    }
+
+    &-scroll {
+      display: none;
+    }
   }
 }

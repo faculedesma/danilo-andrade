@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from 'react';
+import { SecondaryCTAButton } from '@/components/buttons/SecondaryCTAButton';
+import { Links } from '@/components/social/Social';
 import './menu.scss';
 
 const links = [
@@ -46,6 +48,12 @@ export const Menu = ({ isOpen, toggleMenu }) => {
     }
   }, [isOpen]);
 
+  const handleCTAClick = () => {
+    const work = document.getElementById('contact');
+    work.scrollIntoView({ behavior: 'smooth' });
+    setIsOpen(false);
+  };
+
   return (
     <div ref={menuRef} className="menu">
       <div className="container">
@@ -70,6 +78,15 @@ export const Menu = ({ isOpen, toggleMenu }) => {
             );
           })}
         </ul>
+        <div className="menu-social">
+          <Links />
+        </div>
+        <div className="menu-cta">
+          <SecondaryCTAButton
+            label="get in touch"
+            onClick={handleCTAClick}
+          />
+        </div>
         <div className="menu-separator"></div>
       </div>
     </div>

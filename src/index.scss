@@ -15,6 +15,7 @@ body {
 
   color: $secondary-color;
   background-color: $primary-color;
+
   #root {
     width: 100%;
     height: 100%;
@@ -53,4 +54,25 @@ button {
 label {
   font-size: $paragraph-two-size;
   color: $secondary-color;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  body {
+    min-height: 100dvh;
+  }
+
+  h1 {
+    font-size: $heading-size-mobile;
+    letter-spacing: $heading-letter-spacing-mobile;
+  }
+
+  h2 {
+    font-size: $subheading-size-mobile;
+    letter-spacing: $subheading-letter-spacing-mobile;
+  }
+
+  p {
+    font-size: $paragraph-one-size-mobile;
+    letter-spacing: 2px;
+  }
 }

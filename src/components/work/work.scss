@@ -728,3 +728,70 @@
     transform-origin: left;
   }
 }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .work {
+    &-card {
+      width: 100%;
+      margin: 50px 0;
+
+      &--top {
+        width: 100%;
+        height: auto;
+        flex-direction: column-reverse;
+
+        &-left {
+          width: 100%;
+          text-align: center;
+          align-items: center;
+          justify-content: space-between;
+
+          h1 {
+            margin: 30px 0;
+          }
+        }
+
+        &-right {
+          width: auto;
+
+          &--cover {
+            img {
+              width: 200px;
+            }
+          }
+        }
+      }
+
+      &--bottom {
+        height: 500px;
+
+        &-image {
+          img,
+          video {
+            width: 100%;
+            height: 350px;
+          }
+        }
+      }
+    }
+
+    &-all {
+      &--movies,
+      &--theatre {
+        &-list {
+          max-height: none;
+
+          &--row {
+            width: 100%;
+
+            &-more {
+              &-expand {
+                width: 220px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
