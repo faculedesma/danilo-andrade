@@ -24,7 +24,7 @@ If you want to play with it just follow these steps:
 
 1. Clone the repo
    ```sh
-   git clone git@github.com:faculedesma/reactjs-vite.git
+   git clone git@github.com:faculedesma/danilo-andrade.git
    ```
 2. Install NPM packages
    ```sh
