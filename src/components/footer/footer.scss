@@ -29,7 +29,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 330px;
+        width: 440px;
 
         h1:last-child {
           color: $highlight-color;
@@ -53,7 +53,7 @@
 
     &--copyright {
       font-weight: lighter;
-      font-size: $small-size;
+      font-size: $paragraph-one-size;
     }
   }
 
