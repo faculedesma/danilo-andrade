@@ -16,8 +16,8 @@ const Home = ({ isLoading }) => {
       <Header />
       <Hero />
       <Work />
-      {/* <AboutMe /> */}
-      {/* <Footer /> */}
+      <AboutMe />
+      <Footer />
       <MouseFollow />
     </div>
   );

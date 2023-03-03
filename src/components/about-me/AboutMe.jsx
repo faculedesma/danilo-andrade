@@ -72,11 +72,11 @@ const AboutMe = () => {
 
   const isFirstInViewport = useIntersection(
     aboutFirstRef,
-    '100px'
+    '0px'
   );
   const isSecondInViewport = useIntersection(
     aboutSecondRef,
-    '100px'
+    '0px'
   );
   const isThirdInViewport = useIntersection(
     aboutThirdRef,
@@ -107,12 +107,9 @@ const AboutMe = () => {
     <div className="container">
       <div id="about-me" className="about-me">
         <div className="about-me--top">
-          <h1>About me</h1>
+          <h2>About me</h2>
         </div>
-        <div
-          ref={aboutFirstRef}
-          className="about-me--first"
-        >
+        <div className="about-me--first">
           <div className="about-me--first-map">
             <img src={BrazilMap} alt="brazil-map" />
             <div className="about-me--first-map-pin">
@@ -120,7 +117,13 @@ const AboutMe = () => {
             </div>
           </div>
           <div className="about-me--first-red">
-            <img src={DaniloRed} alt="danilo-red" />
+            <div className="about-me--first-red--image">
+              <img
+                ref={aboutFirstRef}
+                src={DaniloRed}
+                alt="danilo-red"
+              />
+            </div>
             <div className="about-me--first-red--text">
               <p>
                 Brazilian <b>trained actor</b> born in São
@@ -140,89 +143,88 @@ const AboutMe = () => {
             <img src={DaniloGreen} alt="danilo-green" />
           </div>
         </div>
-      </div>
-      <div
-        ref={aboutSecondRef}
-        className="about-me--second"
-      >
-        <img src={DaniloCold} alt="danilo-cold" />
-        <div className="about-me--second-text">
-          <h2>First Steps</h2>
-          <p>
-            After my studies, I started traveling around
-            South America, acting and working various
-            customer service jobs. I lived in Buenos Aires
-            for three months because I wanted to learn
-            Spanish. Eventually, I decided that I wanted to
-            try something new, so in 2015, I decided to move
-            to Ireland. I spent several years there, working
-            all kinds of different jobs—customer service,
-            pubs, everything. Eventually, I landed a job at
-            a social media company. After a while, I felt
-            ready for a new challenge, which was when I
-            applied for the role at N26.
-          </p>
-          <div className="about-me--second-line"></div>
+        <div className="about-me--second">
+          <img
+            ref={aboutSecondRef}
+            src={DaniloCold}
+            alt="danilo-cold"
+          />
+          <div className="about-me--second-text">
+            <h2>First Steps</h2>
+            <p>
+              After my studies, I started traveling around
+              South America, acting and working various
+              customer service jobs. I lived in Buenos Aires
+              for three months because I wanted to learn
+              Spanish. Eventually, I decided that I wanted
+              to try something new, so in 2015, I decided to
+              move to Ireland. I spent several years there,
+              working all kinds of different jobs—customer
+              service, pubs, everything. Eventually, I
+              landed a job at a social media company. After
+              a while, I felt ready for a new challenge,
+              which was when I applied for the role at N26.
+            </p>
+            <div className="about-me--second-line"></div>
+          </div>
         </div>
-      </div>
-      <div ref={aboutThirdRef} className="about-me--third">
-        <div className="about-me--third-text">
-          <p>
-            I have wonderful memories of this time, and it’s
-            something I take with me to this day—teamwork,
-            effective communication, respect for others. In
-            fact, I’d say that this class really changed my
-            life, because it brought out an important aspect
-            that is still a big part of my career.
-          </p>
-          <p>“</p>
-          <p>
-            One day, an actor that we’d hired didn’t show up
-            and we needed to shoot. So, the team said, “Just
-            have Danilo do it!” And I actually ended up
-            doing well—my classmates couldn’t believe that
-            it was my first time in front of the camera.
-          </p>
-          <div className="about-me--third-line"></div>
+        <div
+          ref={aboutThirdRef}
+          className="about-me--third"
+        >
+          <div className="about-me--third-text">
+            <p>
+              I have wonderful memories of this time, and
+              it’s something I take with me to this
+              day—teamwork, effective communication, respect
+              for others. In fact, I’d say that this class
+              really changed my life, because it brought out
+              an important aspect that is still a big part
+              of my career.
+            </p>
+            <p>“</p>
+            <p>
+              One day, an actor that we’d hired didn’t show
+              up and we needed to shoot. So, the team said,
+              “Just have Danilo do it!” And I actually ended
+              up doing well—my classmates couldn’t believe
+              that it was my first time in front of the
+              camera.
+            </p>
+            <div className="about-me--third-line"></div>
+          </div>
+          <img src={DaniloBrown} alt="danilo-brown" />
         </div>
-        <img src={DaniloBrown} alt="danilo-brown" />
-      </div>
-      <div ref={aboutFourRef} className="about-me--four">
-        <p>
-          I have wonderful memories of this time, and it’s
-          something I take with me to this day—teamwork,
-          effective communication, respect for others. In
-          fact, I’d say that this class really changed my
-          life, because it brought out an important aspect
-          that is still a big part of my career. Well, one
-          day, an actor that we’d hired didn’t show up and
-          we needed to shoot. So, the team said, “Just have
-          Danilo do it!” And I actually ended up doing
-          well—my classmates couldn’t believe that it was my
-          first time in front of the camera.
-        </p>
-      </div>
-      <div className="about-me--final">
-        <div className="about-me--final-container">
-          {images.map((image, index) => (
-            <div
-              style={{ ['--i']: index + 1 }}
-              className="about-me--final-item"
-            >
-              <img src={image.src} alt={image.id} />
-              <div className="about-me--final-item-text">
-                <p>{image.text}</p>
+        <div ref={aboutFourRef} className="about-me--four">
+          <p>
+            I keep following my path and trying to be as
+            close as possible to art. Evolve day by day, as
+            a person and as an actor so I can become a
+            better version of myself and help others.
+          </p>
+        </div>
+        <div className="about-me--final">
+          <div className="about-me--final-container">
+            {images.map((image, index) => (
+              <div
+                style={{ ['--i']: index + 1 }}
+                className="about-me--final-item"
+              >
+                <img src={image.src} alt={image.id} />
+                <div className="about-me--final-item-text">
+                  <p>{image.text}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="about-me--cta">
-        <h2>Let's work together!</h2>
-        <PrimaryCTAButton
-          label="connect"
-          onClick={handlePrimaryCTAClick}
-        />
+        <div className="about-me--cta">
+          <h2>Let's work together!</h2>
+          <PrimaryCTAButton
+            label="connect"
+            onClick={handlePrimaryCTAClick}
+          />
+        </div>
       </div>
     </div>
   );
