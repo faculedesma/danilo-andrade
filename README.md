@@ -1,3 +1,5 @@
+[![Deployment Pipeline](https://github.com/faculedesma/danilo-andrade/actions/workflows/pipeline.yml/badge.svg)](https://github.com/faculedesma/danilo-andrade/actions/workflows/pipeline.yml)
+
 # Danilo Andrade
 
 ## About The Project
