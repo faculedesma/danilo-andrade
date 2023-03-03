@@ -7,32 +7,34 @@ export const useMouseFollow = (id) => {
   const handleFollowMouseMove = useCallback(
     (e) => {
       const mouseFollow = document.getElementById(id);
-      gsap.set(mouseFollow, {
-        xPercent: -50,
-        yPercent: -50,
-        scale: 0
-      });
-      gsap.to(mouseFollow, {
-        duration: 0.5,
-        overwrite: 'auto',
-        x: e.clientX,
-        y: e.clientY,
-        stagger: 0.15,
-        ease: 'none'
-      });
-
-      let tl = gsap.timeline({
-        defaults: { duration: 0.5, ease: 'none' }
-      });
-      tl.to(mouseFollow, {
-        scale: 1,
-        overwrite: 'auto',
-        stagger: {
-          amount: 0.15,
-          from: 'start',
+      if (mouseFollow) {
+        gsap.set(mouseFollow, {
+          xPercent: -50,
+          yPercent: -50,
+          scale: 0
+        });
+        gsap.to(mouseFollow, {
+          duration: 0.5,
+          overwrite: 'auto',
+          x: e.clientX,
+          y: e.clientY,
+          stagger: 0.15,
           ease: 'none'
-        }
-      });
+        });
+
+        let tl = gsap.timeline({
+          defaults: { duration: 0.5, ease: 'none' }
+        });
+        tl.to(mouseFollow, {
+          scale: 1,
+          overwrite: 'auto',
+          stagger: {
+            amount: 0.15,
+            from: 'start',
+            ease: 'none'
+          }
+        });
+      }
     },
     [id]
   );
