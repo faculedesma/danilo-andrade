@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useIntersection } from '@/components/common/hooks/useIntersection';
 // import MediaSource from '@/components/common/media-source/MediaSource';
-import ReactPlayer from 'react-player/lazy';
 import './work.scss';
 
 export const Card = ({ work }) => {

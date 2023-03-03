@@ -8,7 +8,7 @@ import OsLadosGuy from '@/assets/images/os-lados-guy.png';
 import OsLadosVideo from '@/assets/videos/os-lados-trailer.mp4';
 import OitoVentosCover from '@/assets/images/oita-ventos-cover.png';
 import OitoVentosGuy from '@/assets/images/oita-ventos-guy.png';
-import OitoVentosVideo from '@/assets/videos/oita-ventos.mp4';
+import OitoVentosVideo from '@/assets/videos/os-lados-trailer.mp4';
 
 export const mainWorks = [
   {
