@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { PrimaryCTAButton } from '../buttons/PrimaryCTAButton';
-import { mainWorks, allWorks } from '@/data/Works';
+import { mainWorks } from '@/data/Works';
+import { Theatre } from './Theatre';
+import { Movies } from './Movies';
 import { Card } from './Card';
-import { Row } from './Row';
 import './work.scss';
 
 const Work = () => {
@@ -26,17 +27,7 @@ const Work = () => {
     setSelected(updated);
   };
 
-  const handleViewAll = () => {
-    setShowAll(true);
-  };
-
-  useEffect(() => {
-    window.scrollBy({
-      top: 200,
-      left: 0,
-      behavior: 'smooth'
-    });
-  }, [selected.length]);
+  const handleViewAll = () => setShowAll(true);
 
   return (
     <div id="work" className="container">
@@ -69,26 +60,8 @@ const Work = () => {
         ) : null}
         {showAll ? (
           <div className="work-all">
-            <h2>Movies / TV</h2>
-            <div className="work-all--movies">
-              {allWorks
-                .filter(
-                  (work, index) => work.type === 'movies'
-                )
-                .map((filtered, index) => (
-                  <Row work={filtered} />
-                ))}
-            </div>
-            <h2>Theatre</h2>
-            <div className="work-all--theatre">
-              {allWorks
-                .filter(
-                  (work, index) => work.type === 'theatre'
-                )
-                .map((filtered, index) => (
-                  <Row work={filtered} />
-                ))}
-            </div>
+            <Movies />
+            <Theatre />
           </div>
         ) : null}
       </div>

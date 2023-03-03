@@ -1,9 +1,14 @@
+import NegoCover from '@/assets/images/nego-cover.png';
+import NegoGuy from '@/assets/images/nego-guy.png';
+import NegoVideo from '@/assets/videos/nego-video.mp4';
+import BandidosCover from '@/assets/images/bandidos-cover.png';
+import BandidosGuy from '@/assets/images/bandidos-guy.png';
 import OsLadosCover from '@/assets/images/os-lados-cover.png';
 import OsLadosGuy from '@/assets/images/os-lados-guy.png';
 import OsLadosVideo from '@/assets/videos/os-lados-trailer.mp4';
-import OitaVentosCover from '@/assets/images/oita-ventos-cover.png';
-import OitaVentosGuy from '@/assets/images/oita-ventos-guy.png';
-import OitaVentosVideo from '@/assets/videos/oita-ventos.mp4';
+import OitoVentosCover from '@/assets/images/oita-ventos-cover.png';
+import OitoVentosGuy from '@/assets/images/oita-ventos-guy.png';
+import OitoVentosVideo from '@/assets/videos/oita-ventos.mp4';
 
 export const mainWorks = [
   {
@@ -29,25 +34,25 @@ export const mainWorks = [
   },
   {
     id: 'work-two',
-    title: 'Oita Ventos',
+    title: 'Oito Ventos',
     award:
       'Winner of the 22º Cine Ceará for Best ShortFilm',
     description:
-      'A thriliing movie about someone who probablymeets someone, outiside or inside. Must see if you like suspense and mystery.',
+      'Oito Ventos tells real stories of conflicts and fear caused by the greatest love in the world: the love of a mother, which is also responsible for the most beautiful stories of reconciliation.',
     year: '2014',
     images: {
       cover: {
-        src: OitaVentosCover,
+        src: OitoVentosCover,
         alt: 'oita-ventos-cover'
       },
       guy: {
-        src: OitaVentosGuy,
+        src: OitoVentosGuy,
         alt: 'oita-ventos-guy'
       }
     },
     video: {
-      id: 'oita-ventos',
-      src: OitaVentosVideo
+      id: 'oito-ventos',
+      src: OitoVentosVideo
     },
     order: '02'
   },
@@ -55,37 +60,37 @@ export const mainWorks = [
     id: 'work-three',
     title: 'Nego',
     award:
-      'Winner of the 22º Cine Ceará for Best ShortFilm',
-    year: '2011',
+      'Best Movie 1º Festival de Cinema de Sta Cruz do Sul',
+    year: '2013',
     description:
-      'A thriliing movie about someone who probablymeets someone, outiside or inside. Must see if you like suspense and mystery.',
+      'Small, black and skinny, another street boy obeying the crook known as Parana, even unprotected and alone, he walks for hours in the dangerous streets of a nightly Sao Paulo, to deliver a mysterious package. As he goes in his journey suffering cold, distresses, loneliness and fear, Nego takes refuge into his thoughts, pictures of his life.',
     images: {
       cover: {
-        src: OsLadosCover,
-        alt: 'os-lados-da-rua-cover'
+        src: NegoCover,
+        alt: 'nego-cover'
       },
-      guy: { src: OsLadosGuy, alt: 'os-lados-da-rua-guy' }
+      guy: { src: NegoGuy, alt: 'nego-guy' }
     },
     video: {
-      id: 'bandidos-video',
-      src: OsLadosVideo
+      id: 'nego-video',
+      src: NegoVideo
     },
     order: '03'
   },
   {
     id: 'work-four',
-    title: 'BANDIDOS',
+    title: 'Bandidos',
     award:
       'Winner of the 22º Cine Ceará for Best ShortFilm',
-    year: '2013',
+    year: '2010',
     description:
       'A thriliing movie about someone who probablymeets someone, outiside or inside. Must see if you like suspense and mystery.',
     images: {
       cover: {
-        src: OsLadosCover,
-        alt: 'os-lados-da-rua-cover'
+        src: BandidosCover,
+        alt: 'bandidos-cover'
       },
-      guy: { src: OsLadosGuy, alt: 'os-lados-da-rua-guy' }
+      guy: { src: BandidosGuy, alt: 'bandidos' }
     },
     video: {
       id: 'bandidos-video',
@@ -118,7 +123,7 @@ export const allWorks = [
       extended: `Playing Aliado Jota, the mother's son.`
     },
     description:
-      'This is a movie about something that happened with someone in some place in space and time is always relevant you know, but what can we do? Nothing or everything. Live free.',
+      'Oito Ventos tells real stories of conflicts and fear caused by the greatest love in the world: the love of a mother, which is also responsible for the most beautiful stories of reconciliation.',
     year: '2014',
     awards: null
   },
@@ -141,10 +146,10 @@ export const allWorks = [
     type: 'movies',
     part: {
       main: 'Actor',
-      extended: 'Playing the policeman role.'
+      extended: 'Participation in the role of policeman.'
     },
     description:
-      'This is a movie about something that happened with someone in some place in space and time is always relevant you know, but what can we do? Nothing or everything. Live free.',
+      'Small, black and skinny, another street boy obeying the crook known as Parana unprotected and alone walks in the dangerous streets of a nightly Sao Paulo, to deliver a mysterious package. As he goes in his journey suffering cold, distresses, loneliness and fear, Nego takes refuge into his thoughts, pictures of his life.',
     year: '2013',
     awards: [
       'Best  Movie 7º Fest Aruanda/PB 2011',
@@ -165,7 +170,6 @@ export const allWorks = [
     year: '2012',
     awards: ['Best movie 22º Cine Ceará']
   },
-
   {
     id: 'inspiracao',
     name: '(Ins)piração',
