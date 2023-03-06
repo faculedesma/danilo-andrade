@@ -44,7 +44,11 @@ const Header = () => {
     <>
       <header className="header">
         <div className="header-toggle">
-          <button ref={buttonRef} onClick={toggleMenu}>
+          <button
+            id="toggle-button"
+            ref={buttonRef}
+            onClick={toggleMenu}
+          >
             <div></div>
             <div></div>
           </button>

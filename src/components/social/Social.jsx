@@ -26,6 +26,7 @@ export const Links = () => {
         className="twitter"
         href="https://www.instagram.com/daniloandra_de/"
         target="_blank"
+        aria-label="Go to Danilo's twitter account."
       >
         <Pinterest />
       </a>
@@ -33,10 +34,15 @@ export const Links = () => {
         className="instagram"
         href="https://www.instagram.com/daniloandra_de/"
         target="_blank"
+        aria-label="Go to Danilo's instagram account."
       >
         <Instagram />
       </a>
-      <a className="mail" onClick={handleMailClick}>
+      <a
+        className="mail"
+        onClick={handleMailClick}
+        aria-label="Go to Danilo's instagram account."
+      >
         <Mail />
         <Tooltip
           tooltipRef={tooltipRef}

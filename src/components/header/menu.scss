@@ -21,11 +21,11 @@
     height: 500px;
     padding-top: 100px;
 
-    &--container {
+    &--item {
       height: 60px;
       clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
 
-      &-item {
+      &-container {
         height: 100%;
         transform: translateY(50px);
 
@@ -78,8 +78,8 @@
   animation: show-menu 0.3s ease-out forwards;
 
   .menu-links {
-    &--container {
-      &-item {
+    &--item {
+      &-container {
         animation: show-item 0.5s ease-in-out forwards;
       }
     }
@@ -90,8 +90,8 @@
   animation: hide-menu 0.5s ease-in-out forwards;
 
   .menu-links {
-    &--container {
-      &-item {
+    &--item {
+      &-container {
         animation: hide-item 0.3s ease-in-out forwards;
       }
     }
@@ -152,8 +152,8 @@
     &-links {
       height: 350px;
 
-      &--container {
-        &-item {
+      &--item {
+        &-container {
           a {
             font-size: $subheading-size-mobile;
           }

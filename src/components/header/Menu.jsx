@@ -60,11 +60,8 @@ export const Menu = ({ isOpen, toggleMenu }) => {
         <ul className="menu-links">
           {links.map((link, index) => {
             return (
-              <div
-                key={index}
-                className="menu-links--container"
-              >
-                <li className="menu-links--container-item">
+              <li key={index} className="menu-links--item">
+                <div className="menu-links--item-container">
                   <a
                     onClick={(e) =>
                       handleLinkClick(e, link.id)
@@ -73,8 +70,8 @@ export const Menu = ({ isOpen, toggleMenu }) => {
                   >
                     {link.label}
                   </a>
-                </li>
-              </div>
+                </div>
+              </li>
             );
           })}
         </ul>
