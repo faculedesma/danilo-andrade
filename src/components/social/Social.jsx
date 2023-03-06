@@ -41,7 +41,7 @@ export const Links = () => {
       <a
         className="mail"
         onClick={handleMailClick}
-        aria-label="Go to Danilo's instagram account."
+        aria-label="Copy Danilo's e-mail address."
       >
         <Mail />
         <Tooltip
