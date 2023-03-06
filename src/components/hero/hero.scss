@@ -473,9 +473,6 @@
       }
     }
 
-    &-cta {
-    }
-
     &-image {
       width: 300px;
     }
@@ -486,6 +483,15 @@
 
     &-scroll {
       display: none;
+    }
+  }
+
+  .hero-background {
+    height: 550px;
+    background-position: top;
+
+    &--gradient {
+      height: 550px;
     }
   }
 }

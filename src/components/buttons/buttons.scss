@@ -87,7 +87,7 @@
       letter-spacing: 0;
       transition: all ease-in 250ms;
       display: flex;
-      align-content: center;
+      align-items: center;
       justify-content: space-around;
 
       svg {
@@ -114,7 +114,7 @@
   .button {
     &-cta {
       &--secondary {
-        width: 230px;
+        width: 150px;
       }
     }
   }

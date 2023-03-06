@@ -21,8 +21,8 @@ const Footer = () => {
         <div className="footer-left">
           <div className="footer-left--top">
             <div className="footer-left--top-title">
-              <h1>Get in</h1>
-              <h1>touch</h1>
+              <h1>Get In</h1>
+              <h1>Touch</h1>
             </div>
             <div className="footer-left--top-mail">
               daniloandradeactor@gmail.com

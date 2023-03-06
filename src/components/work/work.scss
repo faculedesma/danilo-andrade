@@ -731,6 +731,8 @@
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   .work {
+    padding-bottom: 0;
+
     &-card {
       width: 100%;
       margin: 50px 0;
