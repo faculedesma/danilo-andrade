@@ -41,9 +41,13 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 440px;
+        width: 373px;
 
-        h1:last-child {
+        h2 {
+          font-size: 3rem;
+        }
+
+        h2:last-child {
           color: $highlight-color;
         }
       }

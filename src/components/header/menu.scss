@@ -53,8 +53,7 @@
     }
   }
 
-  &-social,
-  &-cta {
+  &-social {
     display: none;
   }
 
@@ -161,8 +160,7 @@
       }
     }
 
-    &-social,
-    &-cta {
+    &-social {
       display: inherit;
       height: 50px;
     }
@@ -172,12 +170,6 @@
 
       .social {
         justify-content: space-evenly;
-      }
-    }
-
-    &-cta {
-      svg {
-        display: none;
       }
     }
 

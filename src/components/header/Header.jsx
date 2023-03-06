@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import { Logo } from '@/assets/svgs/Logo';
-import { SecondaryCTAButton } from '@/components/buttons/SecondaryCTAButton';
 import { Menu } from './Menu';
 import './header.scss';
 
@@ -34,15 +33,15 @@ const Header = () => {
     top.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleCTAClick = () => {
-    const work = document.getElementById('contact');
-    work.scrollIntoView({ behavior: 'smooth' });
-    setIsOpen(false);
-  };
-
   return (
     <>
       <header className="header">
+        <div
+          onClick={handleLogoClick}
+          className="header-logo"
+        >
+          <Logo />
+        </div>
         <div className="header-toggle">
           <button
             id="toggle-button"
@@ -52,18 +51,6 @@ const Header = () => {
             <div></div>
             <div></div>
           </button>
-        </div>
-        {/* <div
-          onClick={handleLogoClick}
-          className="header-logo"
-        >
-          <Logo />
-        </div> */}
-        <div className="header-cta">
-          <SecondaryCTAButton
-            label="get in touch"
-            onClick={handleCTAClick}
-          />
         </div>
       </header>
       <Menu isOpen={isOpen} toggleMenu={toggleMenu} />

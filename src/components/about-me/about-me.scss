@@ -421,6 +421,11 @@
       &-map {
         transform: translate(50px, -50px);
 
+        &-pin {
+          top: 68%;
+          right: 36%;
+        }
+
         img {
           width: 320px;
         }
@@ -508,7 +513,6 @@
 
     &--final {
       margin: 75px 0;
-      overflow-x: hidden;
 
       &-container {
         width: 200px;
