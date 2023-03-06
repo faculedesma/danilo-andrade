@@ -59,6 +59,8 @@
       border: 0;
       background: transparent;
       gap: 2rem;
+      transform: scale(1);
+      transition: all 0.3s;
 
       > div {
         background: $secondary-color;
@@ -72,6 +74,11 @@
           transform: scaleX(0.5);
           transform-origin: right;
         }
+      }
+
+      &:hover {
+        transform: scale(0.9);
+        transition: all 0.3s;
       }
     }
 

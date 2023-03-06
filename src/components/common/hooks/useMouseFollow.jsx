@@ -1,7 +1,11 @@
 import { useRef, useEffect, useCallback } from 'react';
 import gsap from 'gsap';
 
-export const useMouseFollow = (id) => {
+export const useMouseFollow = (
+  id,
+  delay = 0.15,
+  duration = 0.5
+) => {
   const mounted = useRef(null);
 
   const handleFollowMouseMove = useCallback(
@@ -14,22 +18,22 @@ export const useMouseFollow = (id) => {
           scale: 0
         });
         gsap.to(mouseFollow, {
-          duration: 0.5,
+          duration: duration,
           overwrite: 'auto',
           x: e.clientX,
           y: e.clientY,
-          stagger: 0.15,
+          stagger: delay,
           ease: 'none'
         });
 
         let tl = gsap.timeline({
-          defaults: { duration: 0.5, ease: 'none' }
+          defaults: { duration: duration, ease: 'none' }
         });
         tl.to(mouseFollow, {
           scale: 1,
           overwrite: 'auto',
           stagger: {
-            amount: 0.15,
+            amount: delay,
             from: 'start',
             ease: 'none'
           }

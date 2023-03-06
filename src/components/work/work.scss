@@ -129,11 +129,19 @@
         justify-content: flex-end;
 
         &--cover {
+          transform: scale(1);
+          transition: all 0.3s ease-in;
+
           img {
             box-shadow: -10px 8px 24px 0px
               rgba(0, 0, 0, 0.4);
             width: 250px;
             transform: scale(0);
+          }
+
+          &:hover {
+            transform: scale(1.1);
+            transition: all 0.3s ease-in;
           }
         }
       }
