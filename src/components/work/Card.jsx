@@ -15,7 +15,7 @@ export const Card = ({ work }) => {
   );
   const isBottomInViewport = useIntersection(
     workBottomRef,
-    '-50px'
+    '-100px'
   );
 
   const removeShowAddHideVideo = () => {
