@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { useIntersection } from '@/components/common/hooks/useIntersection';
-// import MediaSource from '@/components/common/media-source/MediaSource';
 import './work.scss';
 
 export const Card = ({ work }) => {
@@ -16,7 +15,7 @@ export const Card = ({ work }) => {
   );
   const isBottomInViewport = useIntersection(
     workBottomRef,
-    '-175px'
+    '-50px'
   );
 
   const removeShowAddHideVideo = () => {
