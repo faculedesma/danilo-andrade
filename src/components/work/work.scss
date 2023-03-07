@@ -90,7 +90,7 @@
         }
 
         &--underline {
-          width: 35px;
+          width: 40px;
           height: 2px;
           border-radius: 8px;
           background-color: $highlight-color;
@@ -133,9 +133,9 @@
           transition: all 0.3s ease-in;
 
           img {
-            box-shadow: -10px 8px 24px 0px
-              rgba(0, 0, 0, 0.4);
+            box-shadow: -10px 8px 24px 0px rgba(0, 0, 0, 1);
             width: 250px;
+            filter: sepia(15%);
             transform: scale(0);
           }
 
@@ -198,6 +198,13 @@
             font-size: 6rem;
             font-style: italic;
             margin: 0;
+          }
+
+          &:hover {
+            h1 {
+              animation: hover-card-order 0.1s ease-in-out
+                forwards !important;
+            }
           }
         }
       }
@@ -584,6 +591,16 @@
     &-list {
       animation: show-table 0.8s ease-in-out forwards;
     }
+  }
+}
+
+@keyframes hover-card-order {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
   }
 }
 

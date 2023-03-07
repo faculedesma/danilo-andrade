@@ -11,11 +11,11 @@ export const Card = ({ work }) => {
 
   const isTopInViewport = useIntersection(
     workTopRef,
-    '0px'
+    '-25px'
   );
   const isBottomInViewport = useIntersection(
     workBottomRef,
-    '-100px'
+    '-150px'
   );
 
   const removeShowAddHideVideo = () => {
