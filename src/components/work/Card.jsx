@@ -78,10 +78,7 @@ export const Card = ({ work }) => {
             <p>{work.award}</p>
           </div>
           <div className="work-card--top-left--underline"></div>
-          <div
-            ref={workTopRef}
-            className="work-card--top-left--year"
-          >
+          <div className="work-card--top-left--year">
             <p>{work.year}</p>
           </div>
           <div className="work-card--top-left--description">
@@ -91,6 +88,7 @@ export const Card = ({ work }) => {
         <div className="work-card--top-right">
           <div className="work-card--top-right--cover">
             <img
+              ref={workTopRef}
               src={work.images.cover.src}
               alt={work.images.cover.alt}
             />
