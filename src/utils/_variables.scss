@@ -4,17 +4,20 @@
   font-family: 'Futura';
   src: url('../assets/fonts/futura-light.ttf')
     format('truetype');
+  font-weight: 300;
 }
 
 @font-face {
   font-family: 'Futura';
   src: url('../assets/fonts/futura.ttf') format('truetype');
+  font-weight: 400;
 }
 
 @font-face {
   font-family: 'Futura';
   src: url('../assets/fonts/futura-bold.ttf')
     format('truetype');
+  font-weight: 600;
 }
 
 // fonts
@@ -32,20 +35,20 @@ $shades-gray: #797979;
 
 // sizes - desktop
 
-$heading-size: 3.75rem;
-$heading-letter-spacing: 5px;
-$subheading-size: 2rem;
-$subheading-letter-spacing: 5px;
+$heading-one-size: 3.75rem;
+$heading-one-letter-spacing: 5px;
+$heading-two-size: 2rem;
+$heading-two-letter-spacing: 5px;
 
 $paragraph-one-size: 1rem;
 $paragraph-two-size: 0.75rem;
 
 // sizes - mobile
 
-$heading-size-mobile: 3rem;
-$heading-letter-spacing-mobile: 2px;
-$subheading-size-mobile: 2rem;
-$subheading-letter-spacing-mobile: 2px;
+$heading-one-size-mobile: 3rem;
+$heading-one-letter-spacing-mobile: 2px;
+$heading-two-size-mobile: 2rem;
+$heading-two-letter-spacing-mobile: 2px;
 
 $paragraph-one-size-mobile: 0.875rem;
 $paragraph-two-size-mobile: 0.5rem;

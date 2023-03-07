@@ -30,15 +30,15 @@ a {
 
 h1 {
   font-family: $primary-font-family;
-  font-size: $heading-size;
-  letter-spacing: $heading-letter-spacing;
+  font-size: $heading-one-size;
+  letter-spacing: $heading-one-letter-spacing;
   margin: 0;
 }
 
 h2 {
   font-family: $primary-font-family;
-  font-size: $subheading-size;
-  letter-spacing: $subheading-letter-spacing;
+  font-size: $heading-two-size;
+  letter-spacing: $heading-two-letter-spacing;
   margin: 0;
 }
 
@@ -63,13 +63,13 @@ label {
   }
 
   h1 {
-    font-size: $heading-size-mobile;
-    letter-spacing: $heading-letter-spacing-mobile;
+    font-size: $heading-one-size-mobile;
+    letter-spacing: $heading-one-letter-spacing-mobile;
   }
 
   h2 {
-    font-size: $subheading-size-mobile;
-    letter-spacing: $subheading-letter-spacing-mobile;
+    font-size: $heading-two-size-mobile;
+    letter-spacing: $heading-two-letter-spacing-mobile;
   }
 
   p {
