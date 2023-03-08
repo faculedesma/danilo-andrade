@@ -199,7 +199,7 @@
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   .footer {
-    height: 530px;
+    height: 570px;
     margin-top: 50px;
     padding-top: 0;
     align-items: center;
@@ -220,6 +220,10 @@
 
         &-links {
           width: auto;
+
+          &--cv {
+            width: auto;
+          }
 
           .social {
             width: 150px;
