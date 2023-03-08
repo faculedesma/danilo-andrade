@@ -199,13 +199,6 @@
             font-style: italic;
             margin: 0;
           }
-
-          &:hover {
-            h1 {
-              animation: hover-card-order 0.1s ease-in-out
-                forwards !important;
-            }
-          }
         }
       }
 
@@ -591,16 +584,6 @@
     &-list {
       animation: show-table 0.8s ease-in-out forwards;
     }
-  }
-}
-
-@keyframes hover-card-order {
-  0% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(0);
   }
 }
 
