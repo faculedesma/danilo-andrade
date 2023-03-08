@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import { useIntersection } from '@/components/common/hooks/useIntersection';
 import { Links } from '@/components/social/Social';
-import { SecondaryCTAButton } from '@/components/buttons/SecondaryCTAButton';
+import { FileDownload } from '@/assets/svgs/FileDownload';
+import DaniloCVPDF from '@/assets/files/danilo-andrade-cv-2023.pdf';
 import './footer.scss';
 
 const Footer = () => {
@@ -29,7 +30,14 @@ const Footer = () => {
             </div>
             <div className="footer-left--top-links">
               <Links />
-              <SecondaryCTAButton label="call me" />
+              <a
+                href={DaniloCVPDF}
+                download
+                className="footer-left--top-links--cv"
+              >
+                <FileDownload />
+                <p>Download CV</p>
+              </a>
             </div>
           </div>
           <div className="footer-left--copyright">

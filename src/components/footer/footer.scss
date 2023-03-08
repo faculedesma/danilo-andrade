@@ -64,6 +64,20 @@
         .social {
           margin-bottom: 10px;
         }
+
+        &--cv {
+          width: 90%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          color: $secondary-color;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            color: $highlight-color;
+            transition: all 0.3s ease-in-out;
+          }
+        }
       }
     }
 
