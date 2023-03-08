@@ -777,10 +777,21 @@
         height: 500px;
 
         &-image {
-          img,
+          img {
+            width: inherit;
+          }
+
           video {
             width: 100%;
+          }
+
+          img,
+          video {
             height: 350px;
+          }
+
+          &--order {
+            transform: translate(-70px, -70px);
           }
         }
 
