@@ -102,17 +102,6 @@ export const Card = ({ work }) => {
             src={work.images.guy.src}
             alt={work.images.guy.alt}
           />
-          {/* <ReactPlayer
-            ref={videoRef}
-            url={work.video.src}
-            type="media/mp4"
-            volume={0.2}
-            loop={false}
-            muted={false}
-            autoPlay
-            controls={false}
-            onEnded={handleEndVideo}
-          /> */}
           <video
             ref={videoRef}
             src={work.video.src}
@@ -123,6 +112,8 @@ export const Card = ({ work }) => {
             autoPlay
             controls={false}
             onEnded={handleEndVideo}
+            webkit-playsinline
+            playsinline
           ></video>
           <div className="work-card--bottom-image--order">
             <h1>{work.order}</h1>
