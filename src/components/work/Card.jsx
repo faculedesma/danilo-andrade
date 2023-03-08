@@ -32,6 +32,7 @@ export const Card = ({ work }) => {
     setTimeout(() => {
       removeAddShowHideVideo();
       videoRef.current.volume = 0.1;
+      videoRef.current.muted = false;
       videoRef.current.play();
     }, 1000);
   };
@@ -40,6 +41,7 @@ export const Card = ({ work }) => {
     if (videoRef.current) {
       setTimeout(() => {
         removeShowAddHideVideo();
+        videoRef.current.muted = true;
         videoRef.current.pause();
         videoRef.current.currentTime = 0;
       }, 1000);
@@ -106,9 +108,8 @@ export const Card = ({ work }) => {
             ref={videoRef}
             src={work.video.src}
             type="media/mp4"
-            volume={0.2}
             loop={false}
-            muted={false}
+            muted
             autoPlay
             controls={false}
             onEnded={handleEndVideo}
