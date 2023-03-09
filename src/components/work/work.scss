@@ -204,6 +204,16 @@
         }
       }
 
+      &-video {
+        &-mute {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 5;
+          padding: 20px 20px;
+        }
+      }
+
       &-bg {
         position: absolute;
         top: 0;

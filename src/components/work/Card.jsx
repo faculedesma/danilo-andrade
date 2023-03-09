@@ -1,8 +1,19 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useIntersection } from '@/components/common/hooks/useIntersection';
+import { useMediaStream } from '@/components/common/hooks/useMediaStream';
+import { SoundOff } from '@/assets/svgs/SoundOff';
+import { SoundOn } from '@/assets/svgs/SoundOn';
 import './work.scss';
 
+const constraints = {
+  audio: true,
+  video: true
+};
+
 export const Card = ({ work }) => {
+  const [showSound, setShowSound] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+
   const workRef = useRef();
   const workTopRef = useRef();
   const workBottomRef = useRef();
@@ -18,6 +29,8 @@ export const Card = ({ work }) => {
     '-150px'
   );
 
+  const { stream } = useMediaStream(constraints);
+
   const removeShowAddHideVideo = () => {
     videoRef.current.classList.add('hide-video');
     videoRef.current.classList.remove('show-video');
@@ -30,28 +43,40 @@ export const Card = ({ work }) => {
 
   const handlePlayVideo = () => {
     setTimeout(() => {
+      setShowSound(true);
       removeAddShowHideVideo();
-      videoRef.current.volume = 0.1;
-      videoRef.current.muted = false;
-      videoRef.current.play();
+      videoRef.current.srcObject = stream;
+      videoRef.current.onloadedmetadata = () => {
+        videoRef.current.volume = 0.5;
+        videoRef.current.play();
+      };
     }, 1000);
   };
 
   const handleStopVideo = () => {
     if (videoRef.current) {
       setTimeout(() => {
+        setShowSound(false);
         removeShowAddHideVideo();
-        videoRef.current.muted = true;
         videoRef.current.pause();
         videoRef.current.currentTime = 0;
       }, 1000);
     }
   };
 
-  const handleEndVideo = () => removeAddShowHideVideo();
+  const toggleSound = () => {
+    setIsMuted((prevMuted) => !prevMuted);
+    videoRef.current.muted = !videoRef.current.muted;
+  };
+
+  const handleEndVideo = () => {
+    setIsMuted((prevMuted) => !prevMuted);
+    videoRef.current.muted = !videoRef.current.muted;
+    removeShowAddHideVideo();
+  };
 
   useEffect(() => {
-    if (isTopInViewport && videoRef.current) {
+    if (isTopInViewport) {
       workRef.current.classList.add('show-top-card');
       workRef.current.classList.remove('hide-top-card');
     }
@@ -107,15 +132,22 @@ export const Card = ({ work }) => {
           <video
             ref={videoRef}
             src={work.video.src}
-            type="media/mp4"
+            type="video/mp4"
             loop={false}
-            muted
-            autoPlay
+            muted={true}
+            autoPlay={true}
+            playsInline={true}
             controls={false}
             onEnded={handleEndVideo}
-            webkit-playsinline
-            playsinline
           ></video>
+          {showSound ? (
+            <div
+              onClick={toggleSound}
+              className="work-card--bottom-video-mute"
+            >
+              {isMuted ? <SoundOff /> : <SoundOn />}
+            </div>
+          ) : null}
           <div className="work-card--bottom-image--order">
             <h1>{work.order}</h1>
           </div>
