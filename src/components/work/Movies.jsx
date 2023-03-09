@@ -23,7 +23,7 @@ export const Movies = () => {
         {allWorks
           .filter((work, index) => work.type === 'movies')
           .map((filtered, index) => (
-            <Row work={filtered} />
+            <Row key={filtered.id} work={filtered} />
           ))}
       </div>
     </div>

@@ -2,10 +2,7 @@ import React from 'react';
 
 export const Row = ({ work }) => {
   return (
-    <div
-      key={`${work.id}-row`}
-      className={`work-all--${work.type}-list--row`}
-    >
+    <div className={`work-all--${work.type}-list--row`}>
       <div
         className={`work-all--${work.type}-list--row-name`}
       >

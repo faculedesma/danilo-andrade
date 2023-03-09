@@ -2,22 +2,7 @@
 
 @font-face {
   font-family: 'Futura';
-  src: url('../assets/fonts/futura-light.ttf')
-    format('truetype');
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: 'Futura';
-  src: url('../assets/fonts/futura.ttf') format('truetype');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Futura';
-  src: url('../assets/fonts/futura-bold.ttf')
-    format('truetype');
-  font-weight: 600;
+  src: url('@/assets/fonts/futura-bold.otf');
 }
 
 // fonts
