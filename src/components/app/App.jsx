@@ -7,18 +7,12 @@ import './app.scss';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [windowWidth, setWindowWidth] = useState(
-    window.innerWidth
-  );
 
   const mounted = useRef(false);
   const appRef = useRef(null);
 
   useMouseFollow('mouse-follow-border');
   useMouseFollow('mouse-follow-point', 0, 0);
-
-  const updateWindowWidth = () =>
-    setWindowWidth(window.innerWidth);
 
   const handleIsLoaded = () => {
     setIsLoading(false);
@@ -27,14 +21,9 @@ const App = () => {
   useEffect(() => {
     setIsLoading(true);
     mounted.current = true;
-    window.addEventListener('resize', updateWindowWidth);
     window.addEventListener('load', handleIsLoaded);
 
     return () => {
-      window.removeEventListener(
-        'resize',
-        updateWindowWidth
-      );
       window.removeEventListener('load', handleIsLoaded);
       mounted.current = false;
     };
@@ -47,13 +36,11 @@ const App = () => {
     }
   }, [document.readyState]);
 
-  const isMobile = windowWidth < 720;
-
   return (
     <div id="app" ref={appRef} className="app">
       <Home isLoading={isLoading} />
       <Loader isLoading={isLoading} />
-      {!isMobile ? <MouseFollow /> : null}
+      <MouseFollow />
     </div>
   );
 };
