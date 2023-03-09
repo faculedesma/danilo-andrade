@@ -52,10 +52,7 @@ const App = () => {
   return (
     <div id="app" ref={appRef} className="app">
       <Home isLoading={isLoading} />
-      <Loader
-        isLoading={isLoading}
-        percentage={percentage}
-      />
+      <Loader isLoading={isLoading} />
       {!isMobile ? <MouseFollow /> : null}
     </div>
   );

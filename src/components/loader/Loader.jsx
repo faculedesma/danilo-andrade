@@ -7,7 +7,7 @@ const preventScroll = (e) => {
   return false;
 };
 
-const Loader = ({ isLoading, percentage }) => {
+const Loader = ({ isLoading }) => {
   useEffect(() => {
     window.addEventListener('wheel', preventScroll, {
       passive: false
