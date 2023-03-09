@@ -34,9 +34,6 @@ const Loader = ({ isLoading, percentage }) => {
           <div className="loader-center--circle-inside">
             <p>&</p>
           </div>
-          <div className="loader-center--percentage">
-            <p>{percentage}%</p>
-          </div>
         </div>
       </div>
       <div className="loader-right">

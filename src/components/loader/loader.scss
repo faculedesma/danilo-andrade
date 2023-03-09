@@ -81,17 +81,6 @@
         }
       }
     }
-
-    &--percentage {
-      position: absolute;
-      bottom: 25%;
-
-      p {
-        font-weight: lighter;
-        font-style: italic;
-        margin: 0;
-      }
-    }
   }
 }
 
@@ -167,13 +156,6 @@
       justify-content: center;
       padding-right: 0;
       padding-left: 0;
-    }
-
-    &-center {
-      &--percentage {
-        position: absolute;
-        bottom: 10%;
-      }
     }
   }
 }

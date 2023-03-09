@@ -18,29 +18,16 @@ const App = () => {
   useMouseFollow('mouse-follow-border');
   useMouseFollow('mouse-follow-point', 0, 0);
 
-  const handleStartPercentege = () => {
-    setInterval(() => {
-      const random = Math.floor(Math.random() * 10) + 1;
-      setPercentage((prevPercentage) =>
-        random + prevPercentage > 80
-          ? 80
-          : prevPercentage + random
-      );
-    }, 100);
-  };
-
   const updateWindowWidth = () =>
     setWindowWidth(window.innerWidth);
 
   const handleIsLoaded = () => {
-    setPercentage(100);
     setIsLoading(false);
   };
 
   useEffect(() => {
     setIsLoading(true);
     mounted.current = true;
-    handleStartPercentege();
     window.addEventListener('resize', updateWindowWidth);
     window.addEventListener('load', handleIsLoaded);
 
@@ -54,19 +41,13 @@ const App = () => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   if (!isLoading) {
-  //     setPercentage(100);
-  //   }
-  // }, [isLoading]);
-
   const isMobile = windowWidth < 720;
 
   return (
     <div id="app" ref={appRef} className="app">
       <Home isLoading={isLoading} />
       <Loader
-        isLoading={isLoading && percentage === 100}
+        isLoading={isLoading}
         percentage={percentage}
       />
       {!isMobile ? <MouseFollow /> : null}
