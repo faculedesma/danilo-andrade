@@ -7,7 +7,6 @@ import './app.scss';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [percentage, setPercentage] = useState(0);
   const [windowWidth, setWindowWidth] = useState(
     window.innerWidth
   );
@@ -40,6 +39,13 @@ const App = () => {
       mounted.current = false;
     };
   }, []);
+
+  useEffect(() => {
+    // for mobile
+    if (document.readyState === 'complete') {
+      handleIsLoaded();
+    }
+  }, [document.readyState]);
 
   const isMobile = windowWidth < 720;
 
