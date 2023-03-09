@@ -781,7 +781,7 @@
         &-image {
           img,
           video {
-            width: 100%;
+            width: 390px;
             height: 350px;
           }
 
@@ -820,6 +820,90 @@
                 padding-top: 25px;
                 padding-bottom: 25px;
                 width: 220px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* iPad Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  .work {
+    &-card {
+      width: 100%;
+      margin: 50px 0;
+
+      &--top {
+        width: 100%;
+        height: auto;
+        flex-direction: column-reverse;
+
+        &-left {
+          width: 100%;
+          text-align: center;
+          align-items: center;
+          justify-content: space-between;
+
+          h1 {
+            margin: 30px 0;
+          }
+        }
+
+        &-right {
+          width: auto;
+
+          &--cover {
+            img {
+              width: 200px;
+            }
+          }
+        }
+      }
+
+      &--bottom {
+        height: 500px;
+
+        &-image {
+          img,
+          video {
+            width: 700px;
+            height: 450px;
+          }
+
+          &--order {
+            transform: translate(-60px, -75px);
+          }
+        }
+
+        &-bg {
+          height: 500px;
+
+          img {
+            object-fit: cover;
+          }
+
+          &--top-gradient,
+          &--bottom-gradient {
+            height: 100px;
+          }
+        }
+      }
+    }
+
+    &-all {
+      &--movies,
+      &--theatre {
+        &-list {
+          &--row {
+            &-more {
+              &-expand {
+                height: fit-content;
+                padding-top: 25px;
+                padding-bottom: 25px;
+                width: 180px;
               }
             }
           }
