@@ -83,10 +83,6 @@
     }
 
     .clicked {
-      button {
-        padding: inherit;
-      }
-
       div:first-child {
         transform: rotate(45deg);
         transform-origin: left top;
@@ -107,7 +103,11 @@
     height: 100px;
 
     &-toggle {
-      margin-right: 0;
+      button {
+        &:hover {
+          padding: 10%;
+        }
+      }
     }
   }
 }
