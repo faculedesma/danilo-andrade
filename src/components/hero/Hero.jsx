@@ -6,6 +6,7 @@ import { LineHorizontal } from '@/components/common/Seperators';
 import { Links } from '@/components/social/Social';
 import CoverPhoto from '@/assets/images/cover-photo.png';
 import CoverPhotoPsych from '@/assets/images/cover-photo-psych.png';
+import BerlinPNG from '@/assets/images/berlin.png';
 import gsap from 'gsap';
 import './hero.scss';
 
@@ -122,6 +123,11 @@ const Hero = () => {
       </div>
       <div className="hero-background">
         <div className="hero-background--gradient"></div>
+        <img
+          src={BerlinPNG}
+          alt="berlin-city"
+          className="hero-background--load-image"
+        />
       </div>
     </>
   );
