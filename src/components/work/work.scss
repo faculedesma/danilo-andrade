@@ -285,10 +285,10 @@
 
     &--movies {
       &-list {
-        max-height: 800px;
+        max-height: 640px;
 
         &--row:nth-child(1),
-        &--row:nth-child(8) {
+        &--row:nth-child(7) {
           border-top: 1px solid $secondary-color;
           border-radius: 2px;
         }

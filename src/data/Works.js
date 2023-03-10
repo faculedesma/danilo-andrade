@@ -6,8 +6,8 @@ import BandidosGuy from '@/assets/images/bandidos-guy.png';
 import OsLadosCover from '@/assets/images/os-lados-cover.png';
 import OsLadosGuy from '@/assets/images/os-lados-guy.png';
 import OsLadosVideo from '@/assets/videos/os-lados-trailer.mp4';
-import OitoVentosCover from '@/assets/images/oita-ventos-cover.png';
-import OitoVentosGuy from '@/assets/images/oita-ventos-guy.png';
+import OitoVentosCover from '@/assets/images/oito-ventos-cover.png';
+import OitoVentosGuy from '@/assets/images/oito-ventos-guy.png';
 import OitoVentosVideo from '@/assets/videos/os-lados-trailer.mp4';
 
 export const mainWorks = [
