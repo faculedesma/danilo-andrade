@@ -35,6 +35,15 @@ export const Row = ({ work }) => {
           >
             <p>{work.description}</p>
           </div>
+          {work.awards ? (
+            <div
+              className={`work-all--${work.type}-list--row-more-expand--awards`}
+            >
+              <p>
+                <b>Awards:</b> {work.awards}
+              </p>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>
