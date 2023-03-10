@@ -643,14 +643,6 @@
       &-item {
         transform: rotateY(calc(var(--i) * 45deg))
           translateZ(241px);
-
-        &-text {
-          max-width: 90px;
-
-          p {
-            font-size: $paragraph-one-size-mobile;
-          }
-        }
       }
     }
 

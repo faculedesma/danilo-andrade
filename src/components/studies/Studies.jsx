@@ -23,66 +23,48 @@ const studies = [
   },
   {
     id: 'studie-four',
-    name: 'Acting Weekend Course (Schott Acting Studio)',
-    place: 'Berlin',
-    year: '2020'
-  },
-  {
-    id: 'studie-five',
     name: 'Meisner Technique Course (Momentum Acting Studio)',
     place: 'Dublin',
     year: '2019'
   },
   {
-    id: 'studie-six',
+    id: 'studie-five',
     name: 'David Scott Actors - Wednesdays Scene & Monologues Workshop',
     place: 'Dublin',
     year: '2018'
   },
   {
-    id: 'studie-seven',
+    id: 'studie-six',
     name: 'Acting for Camera (Gaiety School of Acting )',
     place: 'Dublin',
     year: '2016'
   },
   {
-    id: 'studie-eigth',
-    name: 'Acting for TV (Escola de Atores Wolf Maya)',
-    place: 'São Paulo',
-    year: '2014'
-  },
-  {
-    id: 'studie-nine',
+    id: 'studie-seven',
     name: 'Acting and Directing for cinema, Theater and TV (Latin American Film Institute)',
     place: 'São Paulo',
     year: '2013'
   },
   {
-    id: 'studie-ten',
+    id: 'studie-eigth',
     name: '1st International Fest Stanislavsky (Institute of Dramatic Arts)',
     place: 'São Paulo',
     year: '2012'
   },
   {
-    id: 'studie-eleven',
+    id: 'studie-nine',
     name: 'Workshop “The Actor’s Key” (Natalia Lazarus)',
     place: 'São Paulo',
     year: '2011'
   },
   {
-    id: 'studie-twelve',
-    name: 'Acting for cinema course (Fátima Toledo Studio)',
-    place: 'São Paulo',
-    year: '2009'
-  },
-  {
-    id: 'studie-thriteen',
+    id: 'studie-ten',
     name: 'Professional Acting Course (Braapa Produções Artísticas)',
     place: 'São Paulo',
     year: '2008, 2010'
   },
   {
-    id: 'studie-fourthteen',
+    id: 'studie-eleven',
     name: 'Communication Studies Radio and TV (Universidade São Judas Tadeu)',
     place: 'São Paulo',
     year: '2008'

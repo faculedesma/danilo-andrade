@@ -73,7 +73,7 @@ export const Menu = ({ isOpen, toggleMenu }) => {
         </div>
         <div className="menu-photographers">
           <p>
-            All photographies by Silvina Ursu & Marcelo
+            All photographies by Silviana Ursu & Marcelo
             Quiñónez
           </p>
         </div>

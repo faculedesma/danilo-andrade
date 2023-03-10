@@ -272,9 +272,6 @@ const AboutMe = () => {
                 className="about-me--final-item"
               >
                 <img src={image.src} alt={image.id} />
-                <div className="about-me--final-item-text">
-                  <p>{image.text}</p>
-                </div>
               </div>
             ))}
           </div>
