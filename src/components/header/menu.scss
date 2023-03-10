@@ -11,6 +11,10 @@
   transform-origin: top;
   z-index: 10;
 
+  .container {
+    position: relative;
+  }
+
   &-links {
     display: flex;
     flex-direction: column;
@@ -55,6 +59,19 @@
 
   &-social {
     display: none;
+  }
+
+  &-photographers {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      font-size: 0.5rem;
+      font-weight: lighter;
+    }
   }
 
   &-separator {
@@ -160,12 +177,13 @@
       }
     }
 
-    &-social {
-      display: inherit;
-      height: 50px;
+    &-photographers {
+      position: relative;
     }
 
     &-social {
+      display: inherit;
+      height: 50px;
       width: 100%;
 
       .social {
