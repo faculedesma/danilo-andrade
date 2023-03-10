@@ -107,7 +107,7 @@ export const allWorks = [
       extended: 'Main role, playing as the son mother.'
     },
     description:
-      'This is a movie about something that happened with someone in some place in space and time is always relevant you know, but what can we do? Nothing or everything. Live free.',
+      '1st feature film from the director Diego Zon, filmed in Espirito Santo during August and September 2022, currently in post production.',
     year: '2023',
     awards: null
   },
@@ -133,7 +133,7 @@ export const allWorks = [
       extended: `Playing 'Guy'.`
     },
     description:
-      'This is a movie about something that happened with someone in some place in space and time is always relevant you know, but what can we do? Nothing or everything. Live free.',
+      'National Christmas publicity for the brand Sadia.',
     year: '2013',
     awards: null
   },
@@ -204,45 +204,6 @@ export const allWorks = [
     awards: null
   },
   {
-    id: 'a-prova-de-ko',
-    name: 'A Prova de K O',
-    type: 'movies',
-    part: {
-      main: 'Actor',
-      extended: 'Playing “Gilberto” character.'
-    },
-    description:
-      'This is a movie about something that happened with someone in some place in space and time is always relevant you know, but what can we do? Nothing or everything. Live free.',
-    year: '2010',
-    awards: null
-  },
-  {
-    id: 'nostalgia',
-    name: 'Nostalgia',
-    type: 'movies',
-    part: {
-      main: 'Actor',
-      extended: 'Playing “Pedro” character.'
-    },
-    description:
-      'This is a movie about something that happened with someone in some place in space and time is always relevant you know, but what can we do? Nothing or everything. Live free.',
-    year: '2010',
-    awards: null
-  },
-  {
-    id: 'nao-e-voce-esta-pasando',
-    name: 'Não é o que você está pensando',
-    type: 'movies',
-    part: {
-      main: 'Actor',
-      extended: 'Playing “Policial” character.'
-    },
-    description:
-      'This is a movie about something that happened with someone in some place in space and time is always relevant you know, but what can we do? Nothing or everything. Live free.',
-    year: '2010',
-    awards: null
-  },
-  {
     id: 'agravantes',
     name: 'Agravantes',
     type: 'movies',
@@ -251,7 +212,7 @@ export const allWorks = [
       extended: 'Playing “Alex” character.'
     },
     description:
-      'This is a movie about something that happened with someone in some place in space and time is always relevant you know, but what can we do? Nothing or everything. Live free.',
+      'Being stuck in a bathroom brings truths to the surface during an eye-to-eye conversation.',
     year: '2010',
     awards: null
   },
@@ -321,8 +282,8 @@ export const allWorks = [
     awards: null
   },
   {
-    id: 'um-jogo-de-seduca',
-    name: 'Um Jogo de Seduçã',
+    id: 'um-jogo-de-seducao',
+    name: 'Um Jogo de Sedução',
     type: 'theatre',
     part: {
       main: 'Actor',

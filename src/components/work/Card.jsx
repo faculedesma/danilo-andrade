@@ -1,14 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useIntersection } from '@/components/common/hooks/useIntersection';
-import { useMediaStream } from '@/components/common/hooks/useMediaStream';
 import { SoundOff } from '@/assets/svgs/SoundOff';
 import { SoundOn } from '@/assets/svgs/SoundOn';
 import './work.scss';
-
-const constraints = {
-  audio: true,
-  video: true
-};
 
 export const Card = ({ work }) => {
   const [showSound, setShowSound] = useState(false);
@@ -29,8 +23,6 @@ export const Card = ({ work }) => {
     '-150px'
   );
 
-  const { stream } = useMediaStream(constraints);
-
   const removeShowAddHideVideo = () => {
     videoRef.current.classList.add('hide-video');
     videoRef.current.classList.remove('show-video');
@@ -45,11 +37,8 @@ export const Card = ({ work }) => {
     setTimeout(() => {
       setShowSound(true);
       removeAddShowHideVideo();
-      videoRef.current.srcObject = stream;
-      videoRef.current.onloadedmetadata = () => {
-        videoRef.current.volume = 0.5;
-        videoRef.current.play();
-      };
+      videoRef.current.volume = 0.5;
+      videoRef.current.play();
     }, 1000);
   };
 
