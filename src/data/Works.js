@@ -107,7 +107,7 @@ export const allWorks = [
       extended: 'Main role, playing as the son mother.'
     },
     description:
-      '1st feature film from the director Diego Zon, filmed in Espirito Santo during August and September 2022, currently in post production.',
+      'Feature film from the director Diego Zon, produced by the De Repente o Rio, filmed in Espirito Santo during August and September 2022 (currently in post-production).',
     year: '2023',
     awards: null
   },

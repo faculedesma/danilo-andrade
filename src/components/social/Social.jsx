@@ -24,7 +24,7 @@ export const Links = () => {
     <div className="social">
       <a
         className="twitter"
-        href="https://www.instagram.com/daniloandra_de/"
+        href="https://pin.it/58ORZn3"
         target="_blank"
         aria-label="Go to Danilo's twitter account."
       >
