@@ -72,7 +72,7 @@ export const Card = ({ work }) => {
   }, [isTopInViewport]);
 
   useEffect(() => {
-    if (isBottomInViewport && videoRef.current) {
+    if (isBottomInViewport) {
       workRef.current.classList.add('show-bottom-card');
       workRef.current.classList.remove('hide-bottom-card');
       handlePlayVideo();
@@ -118,18 +118,20 @@ export const Card = ({ work }) => {
             src={work.images.guy.src}
             alt={work.images.guy.alt}
           />
-          <video
-            ref={videoRef}
-            src={work.video.src}
-            type="video/mp4"
-            loop={false}
-            muted={true}
-            autoPlay={true}
-            playsInline={true}
-            controls={false}
-            onEnded={handleEndVideo}
-          ></video>
-          {showSound ? (
+          {work.video.src ? (
+            <video
+              ref={videoRef}
+              src={work.video.src}
+              type="video/mp4"
+              loop={false}
+              muted={true}
+              autoPlay={true}
+              playsInline={true}
+              controls={false}
+              onEnded={handleEndVideo}
+            ></video>
+          ) : null}
+          {showSound && work.video.src ? (
             <div
               onClick={toggleSound}
               className="work-card--bottom-video-mute"

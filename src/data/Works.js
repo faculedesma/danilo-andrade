@@ -72,7 +72,7 @@ export const mainWorks = [
     },
     video: {
       id: 'oito-ventos',
-      src: OitoVentosVideo
+      src: null
     },
     order: '03'
   },
@@ -91,7 +91,7 @@ export const mainWorks = [
     },
     video: {
       id: 'bandidos-video',
-      src: OsLadosVideo
+      src: null
     },
     order: '04'
   }

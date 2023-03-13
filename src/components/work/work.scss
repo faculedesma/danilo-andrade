@@ -118,7 +118,7 @@
 
           p {
             line-height: 2;
-            font-size: $paragraph-one-size;
+            font-size: $paragraph-two-size;
             font-weight: lighter;
             letter-spacing: 1px;
           }
@@ -209,7 +209,7 @@
           position: absolute;
           top: 0;
           left: 0;
-          z-index: 5;
+          z-index: 105;
           padding: 20px 20px;
         }
       }
