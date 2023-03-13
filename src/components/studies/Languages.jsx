@@ -54,7 +54,10 @@ export const Languages = () => {
       <div className="studies-languages--list">
         {languages.map((language) => {
           return (
-            <div className="studies-languages--list-row">
+            <div
+              key={language.id}
+              className="studies-languages--list-row"
+            >
               <div className="studies-languages--list-row-stars">
                 {Array(language.stars.empty)
                   .fill(null)

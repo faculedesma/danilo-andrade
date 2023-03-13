@@ -19,9 +19,49 @@
     justify-content: center;
   }
 
+  &-filters {
+    width: 75%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 100px;
+
+    &--item {
+      cursor: pointer;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 1px solid $secondary-color;
+      background-color: $primary-color;
+      transition: all ease-in-out 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: scale(1);
+      transition: all ease-in-out 0.2s;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: all ease-in-out 0.2s;
+      }
+
+      p {
+        font-weight: bold;
+      }
+    }
+
+    .active {
+      background-color: $highlight-color;
+      transition: all ease-in-out 0.2s;
+    }
+  }
+
   &-list {
     margin-top: 100px;
-    width: 100%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,10 +69,13 @@
     gap: 1rem;
 
     &--row {
-      width: 80%;
+      width: 100%;
+      height: 100px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      border: 1px solid $secondary-color;
+      padding: 10px 15px;
 
       &-name {
         width: 50%;
@@ -58,19 +101,6 @@
           border-radius: 50%;
           border: 1px solid $secondary-color;
           background: transparent;
-        }
-      }
-
-      &-year {
-        width: 20%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        p {
-          font-weight: bold;
-          margin: 0;
         }
       }
     }
@@ -110,11 +140,53 @@
   }
 }
 
+.show-list {
+  animation: show-list 0.4s ease-in-out forwards;
+}
+
+.hide-list {
+  animation: hide-list 0.4s ease-in-out forwards;
+}
+
+@keyframes show-list {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide-list {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   .studies {
+    &-filters {
+      margin-top: 50px;
+      width: 85%;
+      height: 120px;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+
+      &--item {
+        flex: 0 0 auto;
+      }
+    }
+
     &-list {
       &--row {
         flex-direction: column;
+        height: fit-content;
 
         &-name {
           width: 100%;
