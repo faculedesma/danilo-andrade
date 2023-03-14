@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import {
   Instagram,
   Mail,
@@ -8,25 +8,24 @@ import { Tooltip } from '@/components/common/tooltip/Tooltip';
 import './social.scss';
 
 export const Links = () => {
-  const tooltipRef = useRef(null);
+  const [open, setOpen] = useState(false);
 
   const handleMailClick = () => {
+    setOpen(true);
     navigator.clipboard.writeText(
       'daniloandradeator@gmail.com'
     );
-    tooltipRef.current.className = 'tooltip show';
-    setTimeout(() => {
-      tooltipRef.current.className = 'tooltip hide';
-    }, 2500);
   };
+
+  const handleCloseTooltip = () => setOpen(false);
 
   return (
     <div className="social">
       <a
-        className="twitter"
+        className="pinterest"
         href="https://pin.it/58ORZn3"
         target="_blank"
-        aria-label="Go to Danilo's twitter account."
+        aria-label="Go to Danilo's Pinterest account."
       >
         <Pinterest />
       </a>
@@ -34,7 +33,7 @@ export const Links = () => {
         className="instagram"
         href="https://www.instagram.com/daniloandra_de/"
         target="_blank"
-        aria-label="Go to Danilo's instagram account."
+        aria-label="Go to Danilo's Instagram account."
       >
         <Instagram />
       </a>
@@ -45,7 +44,8 @@ export const Links = () => {
       >
         <Mail />
         <Tooltip
-          tooltipRef={tooltipRef}
+          open={open}
+          close={handleCloseTooltip}
           content="Mail copied to clipboard!"
         />
       </a>

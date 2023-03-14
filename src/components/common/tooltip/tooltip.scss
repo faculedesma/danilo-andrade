@@ -1,7 +1,7 @@
 @import '../../../utils/variables';
 
 .tooltip {
-  width: 200px;
+  width: 180px;
   height: 40px;
   position: absolute;
   left: 50px;
@@ -22,11 +22,11 @@
   }
 }
 
-.show {
+.show-tooltip {
   animation: show-tooltip 0.2s ease-in-out forwards;
 }
 
-.hide {
+.hide-tooltip {
   animation: hide-tooltip 0.2s ease-in-out forwards;
 }
 
