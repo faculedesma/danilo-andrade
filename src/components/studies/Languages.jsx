@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { StarEmpty } from '@/assets/svgs/StarEmpty';
 import { StarFilled } from '@/assets/svgs/StarFilled';
+import { useIntersection } from '@/components/common/hooks/useIntersection';
 
 const languages = [
   {
@@ -46,8 +47,21 @@ const languages = [
 ];
 
 export const Languages = () => {
+  const languageRef = useRef();
+
+  const isInViewport = useIntersection(
+    languageRef,
+    '100px'
+  );
+
+  useEffect(() => {
+    if (isInViewport) {
+      languageRef.current.classList.add('show-languages');
+    }
+  }, [isInViewport]);
+
   return (
-    <div className="studies-languages">
+    <div ref={languageRef} className="studies-languages">
       <div className="studies-languages--title">
         <h2>Languages</h2>
       </div>

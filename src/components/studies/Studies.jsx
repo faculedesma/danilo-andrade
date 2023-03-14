@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useIntersection } from '@/components/common/hooks/useIntersection';
 import { Languages } from './Languages';
 import './studies.scss';
 
@@ -92,12 +93,24 @@ const Studies = () => {
   const [filtered, setFiltered] = useState([]);
 
   const listRef = useRef();
+  const filtersRef = useRef();
+
+  const isFilterInViewport = useIntersection(
+    filtersRef,
+    '50px'
+  );
 
   useEffect(() => {
     const filteredStudies = filterByYears('2023');
     setFiltered(filteredStudies);
     setSelected('2023');
   }, []);
+
+  useEffect(() => {
+    if (isFilterInViewport) {
+      filtersRef.current.classList.add('show-filters');
+    }
+  }, [isFilterInViewport]);
 
   const filterByYears = (activeYear) => {
     const filteredStudies = studies.filter((studie) => {
@@ -123,7 +136,7 @@ const Studies = () => {
         <div className="studies-title">
           <h2>Studies</h2>
         </div>
-        <div className="studies-filters">
+        <div ref={filtersRef} className="studies-filters">
           {years.map((year) => {
             return (
               <div

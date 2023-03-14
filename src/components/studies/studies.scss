@@ -40,12 +40,21 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transform: scale(1);
-      transition: all ease-in-out 0.2s;
+      opacity: 0;
+      transform: scale(0);
+
+      p {
+        color: $secondary-color;
+        letter-spacing: 0;
+        transition: all ease-in-out 0.2s;
+      }
 
       &:hover {
-        transform: scale(1.1);
-        transition: all ease-in-out 0.2s;
+        p {
+          color: $highlight-color;
+          letter-spacing: 1px;
+          transition: all ease-in-out 0.2s;
+        }
       }
 
       p {
@@ -56,6 +65,11 @@
     .active {
       background-color: $highlight-color;
       transition: all ease-in-out 0.2s;
+
+      p {
+        color: $secondary-color;
+        transition: all ease-in-out 0.2s;
+      }
     }
   }
 
@@ -109,6 +123,7 @@
   &-languages {
     width: 100%;
     margin: 100px 0;
+    opacity: 0;
 
     &--title {
       display: flex;
@@ -148,6 +163,52 @@
   animation: hide-list 0.4s ease-in-out forwards;
 }
 
+.show-languages {
+  animation: show-list 0.4s ease-in-out forwards;
+}
+
+.show-filters {
+  div:nth-child(1) {
+    animation: show-filter 0.2s ease-in-out forwards;
+  }
+  div:nth-child(2) {
+    animation: show-filter 0.4s ease-in-out forwards;
+  }
+  div:nth-child(3) {
+    animation: show-filter 0.6s ease-in-out forwards;
+  }
+  div:nth-child(4) {
+    animation: show-filter 0.8s ease-in-out forwards;
+  }
+  div:nth-child(5) {
+    animation: show-filter 1s ease-in-out forwards;
+  }
+  div:nth-child(6) {
+    animation: show-filter 1.2s ease-in-out forwards;
+  }
+  div:nth-child(7) {
+    animation: show-filter 1.4s ease-in-out forwards;
+  }
+  div:nth-child(8) {
+    animation: show-filter 1.6s ease-in-out forwards;
+  }
+  div:nth-child(9) {
+    animation: show-filter 1.8s ease-in-out forwards;
+  }
+  div:nth-child(10) {
+    animation: show-filter 2s ease-in-out forwards;
+  }
+  div:nth-child(11) {
+    animation: show-filter 2.2s ease-in-out forwards;
+  }
+  div:nth-child(12) {
+    animation: show-filter 2.4s ease-in-out forwards;
+  }
+  div:nth-child(13) {
+    animation: show-filter 2.6s ease-in-out forwards;
+  }
+}
+
 @keyframes show-list {
   0% {
     opacity: 0;
@@ -165,6 +226,18 @@
 
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes show-filter {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
