@@ -62,6 +62,7 @@
       clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
 
       h1 {
+        transform: translateY(100%);
         opacity: 0.3;
       }
     }
@@ -70,6 +71,7 @@
       clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
 
       h1 {
+        transform: translateY(100%);
         opacity: 0.5;
       }
     }
