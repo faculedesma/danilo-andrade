@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useIntersection } from '@/components/common/hooks/useIntersection';
 import { SoundOff } from '@/assets/svgs/SoundOff';
 import { SoundOn } from '@/assets/svgs/SoundOn';
+import Awards from './Awards';
 import './work.scss';
 
 export const Card = ({ work }) => {
@@ -91,7 +92,9 @@ export const Card = ({ work }) => {
         <div className="work-card--top-left">
           <h1>{work.title}</h1>
           <div className="work-card--top-left--award">
-            <p>{work.award}</p>
+            {work.awards ? (
+              <Awards awards={work.awards} />
+            ) : null}
           </div>
           <div className="work-card--top-left--underline"></div>
           <div className="work-card--top-left--year">

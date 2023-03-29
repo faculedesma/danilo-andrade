@@ -15,8 +15,13 @@ export const mainWorks = [
   {
     id: 'work-one',
     title: 'os Lados Da Rua',
-    award:
-      'Winner of the 22º Cine Ceará for Best ShortFilm',
+    awards: [
+      'Best Movie  22º Cine Ceará',
+      'Best Actor 3º Festival de Cinema Curta Amazônia',
+      'Best Actor 3º Festival Nacional de Cinema de Petrópolis',
+      'Best Actor Festival Cine São Gonçalo',
+      'Best Actor IV Festival de Jericoacoara Cinema Digital'
+    ],
     description:
       'Carrao (Big Car) is a young boy who, despite his eccentric behavior, lives freely at the pace of life in a typical small Brazilian city. After being caught off-guard by an event that threatens to disrupt his whole world, he will need to find a way to set himself free again.',
     year: '2012',
@@ -36,8 +41,9 @@ export const mainWorks = [
   {
     id: 'work-two',
     title: 'Nego',
-    award:
-      'Best Movie 1º Festival de Cinema de Sta Cruz do Sul',
+    awards: [
+      'Best Movie 1º Festival de Cinema de Sta Cruz do Sul'
+    ],
     year: '2013',
     description:
       'Small, black and skinny, another street boy obeying the crook known as Parana, even unprotected and alone, he walks for hours in the dangerous streets of a nightly Sao Paulo, to deliver a mysterious package. As he goes in his journey suffering cold, distresses, loneliness and fear, Nego takes refuge into his thoughts, pictures of his life.',
@@ -57,7 +63,7 @@ export const mainWorks = [
   {
     id: 'work-three',
     title: 'Oito Ventos',
-    award: null,
+    awards: null,
     description:
       'Oito Ventos tells real stories of conflicts and fear caused by the greatest love in the world: the love of a mother, which is also responsible for the most beautiful stories of reconciliation.',
     year: '2014',
@@ -80,7 +86,7 @@ export const mainWorks = [
   {
     id: 'work-four',
     title: 'Bandidos',
-    award: null,
+    awards: null,
     year: '2010',
     description: `Four criminals commit a robbery, but only three manage to reach the hideout. They have a backpack full of money. It's time to share the profits.`,
     images: {
