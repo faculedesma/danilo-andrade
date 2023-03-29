@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useIntersection } from '@/components/common/hooks/useIntersection';
 
 const Awards = ({ awards }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -6,8 +7,13 @@ const Awards = ({ awards }) => {
   const awardRef = useRef();
   const size = awards.length;
 
+  const isAwardOnViewport = useIntersection(
+    awardRef,
+    '0px'
+  );
+
   useEffect(() => {
-    if (size > 1) {
+    if (size > 1 && isAwardOnViewport) {
       const interval = setInterval(() => {
         awardRef.current.classList.add('hide-award');
         awardRef.current.classList.remove('show-award');
@@ -24,7 +30,7 @@ const Awards = ({ awards }) => {
 
       return () => clearInterval(interval);
     }
-  }, [currentIndex]);
+  }, [currentIndex, isAwardOnViewport]);
 
   return <p ref={awardRef}>{awards[currentIndex]}</p>;
 };
