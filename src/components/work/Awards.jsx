@@ -26,7 +26,7 @@ const Awards = ({ awards }) => {
           awardRef.current.classList.add('show-award');
           awardRef.current.classList.remove('hide-award');
         }, 500);
-      }, 4000);
+      }, 3200);
 
       return () => clearInterval(interval);
     }

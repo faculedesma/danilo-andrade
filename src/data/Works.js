@@ -42,7 +42,8 @@ export const mainWorks = [
     id: 'work-two',
     title: 'Nego',
     awards: [
-      'Best Movie 1º Festival de Cinema de Sta Cruz do Sul'
+      'Best Movie 1º Festival de Cinema de Sta Cruz do Sul',
+      'Best Movie 7º Fest Aruanda/PB 2011'
     ],
     year: '2013',
     description:
