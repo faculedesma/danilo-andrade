@@ -3,19 +3,21 @@ import React from 'react';
 export const Logo = () => {
   return (
     <svg
-      viewBox="0 0 32 47"
+      width="33"
+      height="46"
+      viewBox="0 0 33 46"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M1 0.999995C1.17166 27.3439 3.0465 38.4441 16 38.5C28.1776 36.7366 30.6705 27.0029 31 0.999995"
+        d="M1 6.99566C3 19 3.54649 35.9551 16.5 35.9998C29.4535 36.0446 29.5 19 31 6.99583"
         stroke="#D9D9D9"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M1 46L16 8.5L31 46"
+        d="M1.3125 45L16.3125 7.5L31.3125 45"
         stroke="#7C5656"
         strokeWidth="2"
         strokeLinecap="round"
