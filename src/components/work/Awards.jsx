@@ -5,7 +5,7 @@ const Awards = ({ awards }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const awardRef = useRef();
-  const size = awards.length;
+  const awardsSize = awards.length;
 
   const isAwardOnViewport = useIntersection(
     awardRef,
@@ -13,12 +13,12 @@ const Awards = ({ awards }) => {
   );
 
   useEffect(() => {
-    if (size > 1 && isAwardOnViewport) {
+    if (awardsSize > 1 && isAwardOnViewport) {
       const interval = setInterval(() => {
         awardRef.current.classList.add('hide-award');
         awardRef.current.classList.remove('show-award');
         setTimeout(() => {
-          if (currentIndex === size - 1) {
+          if (currentIndex === awardsSize - 1) {
             setCurrentIndex(0);
           } else {
             setCurrentIndex((prevIndex) => prevIndex + 1);
