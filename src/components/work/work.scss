@@ -198,7 +198,6 @@
           h1 {
             font-family: $primary-font-family;
             font-size: 6rem;
-            font-style: italic;
             margin: 0;
           }
         }
@@ -796,7 +795,11 @@
           }
 
           &--order {
-            transform: translate(-5px, -60px);
+            transform: translate(-20px, -60px);
+
+            h1 {
+              font-size: 5rem;
+            }
           }
         }
 
