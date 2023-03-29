@@ -26,7 +26,12 @@ const Footer = () => {
               <h2>Touch</h2>
             </div>
             <div className="footer-left--top-mail">
-              daniloandradeator@gmail.com
+              <a
+                className="mail"
+                href="mailto: faculedesma1993@gmail.com"
+              >
+                daniloandradeator@gmail.com
+              </a>
             </div>
             <div className="footer-left--top-links">
               <Links />
