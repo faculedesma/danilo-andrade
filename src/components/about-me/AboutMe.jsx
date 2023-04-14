@@ -221,7 +221,7 @@ const AboutMe = () => {
               I felt a huge change upon my return, and soon
               after I got the opportunity to play the
               character Carrão, a special boy who rode an
-              invisible bike and couldn't speak in the short
+              invisible car and couldn't speak in the short
               film 'Os Lados da Rua.' This film collected a
               few awards, including four for best actor.
             </p>
